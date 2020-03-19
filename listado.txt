@@ -1,6 +1,9 @@
 Martín Rivas - Profesor
 
+<<<<<<< HEAD
 Prueba
 
 Jesica Rodriguez - Grupo 2
+Macarena Ugarte
+
 
