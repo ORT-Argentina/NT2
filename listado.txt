@@ -1,6 +1,6 @@
 Martín Rivas - Profesor
 Jesica Rodriguez - Grupo 2
-Macarena Ugarte
+Macarena Ugarte - Grupo 6
 Sebastian Panetta - Grupo 3
 Juan Acuña - Grupo 3
 Martín Rivas
@@ -8,7 +8,15 @@ Bautista Querejeta - Grupo 4
 Eduardo Haslop - Grupo 4
 Ivan Landinez - Grupo 2
 Leandro Aragona - Grupo 5
+Mateo Cernaz - Grupo 5
 Martín Rivas
 Timothy Wider
 Pablo Tapia - No tengo grupo
+<<<<<<< HEAD
 Brian Alvarez - Sin Grupo
+=======
+Lucas Altamirano
+Muhamad Mansour 
+Matias Menendez
+Maria Jose del Pino
+>>>>>>> 129ae8665658d7a022a53d4cdbb20cf5f85a7384
