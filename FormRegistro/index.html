@@ -19,8 +19,8 @@
 </div>
 <div class="container mt-3">
   <div class="row">
-    <div class="col-8">
-      <form name="registro" onsubmit="return validarForm(event);">
+    <div class="col-8" id="step1">
+      <form name="registro" onsubmit="return validarStep(event);">
 
       	<div class="row">
     		<div class="col-6">
@@ -111,17 +111,26 @@
 			    	<input type="text" class="form-control" id="txtphone" placeholder="Número de teléfono">
 			    </div>
 			  </div>
+		  <button type="submit" class="btn btn-primary mt-3">Aceptar</button>
+		</form>
+	</div>
 
-			<div class="form-check">
-			  <input class="form-check-input" type="checkbox" value="" id="chkTerms">
-			  <label class="form-check-label" for="chkTerms">
-			    Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
-			  </label>
-			</div>
+
+
+
+	<div class="div del form check">
+		<form name="registro" onsubmit="return validarForm(event);">
+		<div class="form-check">
+			<input class="form-check-input" type="checkbox" value="" id="chkTerms">
+			<label class="form-check-label" for="chkTerms">
+			  Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
+			</label>
+		  </div>
 
 		  <button type="submit" class="btn btn-primary mt-3">Enviar Registro</button>
 		</form>
-    </div>
+
+	</div>
     <div class="col bg-dark text-light">
     	<div class="text-warning">
     		<p id="helpInfo">Informaci&oacute;n adicional</p>
