@@ -21,8 +21,82 @@
   <div class="row">
     <div class="col-8">
       <form name="registro" onsubmit="return validarForm(event);">
-
+		
       	<div class="row">
+			  <div class="col-6">
+				<div class="form-group">
+				  <label for="nacionalidad">Nacionalidad</label>
+				  <div class="input-group mb-3">
+					  <div class="input-group-prepend">
+						  <span class="input-group-text" id="basic-addon1">
+							  <i class="fas fa-address-book text-primary"></i>
+						  </span>
+						</div>
+						<select name="nacionalidad" id="nacionalidad" class="form-control" >
+								<option value="1">Argentina</option>
+								<option value="2">Venezuela</option>
+							</select>
+					  <!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-6">
+					<div class="form-group">
+					  <label for="genero">Genero</label>
+					  <div class="input-group mb-3">
+						  <div class="input-group-prepend">
+							  <span class="input-group-text" id="basic-addon1">
+								  <i class="fas fa-address-book text-primary"></i>
+							  </span>
+							</div>
+						  <input type="text" class="form-control" id="genero" placeholder="selecione su genero" name="genero" data-info="Completa la información de este campo para continuar">
+						  <!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					  </div>
+					</div>
+				  </div>
+				  <div class="col-6">
+				  <div class="form-group">
+						<label for="txtDni">DNI </label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-id-card text-primary"></i>
+								</span>
+							  </div>
+							<input type="text" class="form-control" id="txtDni" placeholder="Ingreso su DNI" data-info="Completa la información de este campo para continuar">
+						</div>
+					  </div>
+					</div>  
+				  <div class="col-6">
+						<div class="form-group">
+						  <label for="tipoDocumento">Tipo Documento</label>
+						  <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+								  <span class="input-group-text" id="basic-addon1">
+									  <i class="fas fa-address-book text-primary"></i>
+								  </span>
+								</div>
+							  <input type="text" class="form-control" id="tipoDocumento" placeholder="Ingrese Tipo de Documento" name="tipoDocumento" data-info="Completa la información de este campo para continuar">
+							  <!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+						  </div>
+						</div>
+					  </div>
+				<div class="col-6">
+				<div class="form-group">
+				  <label for="txtNroTramite">Nro Tramite</label>
+				  <div class="input-group mb-3">
+					  <div class="input-group-prepend">
+						  <span class="input-group-text" id="basic-addon1">
+							  <i class="fas fa-address-book text-primary"></i>
+						  </span>
+						</div>
+					  <input type="text" class="form-control" id="txtNroTramite" placeholder="Ingrese su nro de tramite" name="nroTramite" data-info="Completa la información de este campo para continuar">
+					  <!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+				  </div>
+				</div>
+			  </div>
+				
+				
     		<div class="col-6">
 			  <div class="form-group">
 			    <label for="txtNombre">Nombre</label>
@@ -52,18 +126,7 @@
 			</div>
 		</div>
 
-	  <div class="form-group">
-	    <label for="txtDni">DNI </label>
-	    <div class="input-group mb-3">
-	    	<div class="input-group-prepend">
-		    	<span class="input-group-text" id="basic-addon1">
-		    		<i class="fas fa-id-card text-primary"></i>
-		    	</span>
-		  	</div>
-	    	<input type="text" class="form-control" id="txtDni" placeholder="Ingreso su DNI" data-info="Completa la información de este campo para continuar">
-	    </div>
-	  </div>
-		  
+	 
 		  <div class="form-group">
 		    <label for="cmbProvincia">Provincia </label>
 		    <select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
