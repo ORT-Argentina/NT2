@@ -1,0 +1,14 @@
+/*.form-control{
+	border-color: red;
+}*/
+
+@-webkit-keyframes display-none-transition {
+  0% {
+    opacity: 0;
+  }
+}
+@keyframes display-none-transition {
+  0% {
+    opacity: 0;
+  }
+}

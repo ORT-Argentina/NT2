@@ -1,0 +1,6 @@
+.env
+.vagrant
+.vagrant/
+.env.php
+.DS_Store
+.phpintel/
