@@ -13,7 +13,7 @@ $(document).ready(function () {
 
 });
 
-function checkPronvincia() {
+function checkNacionalidad() {
 	var object = event.target;
 
 	console.log(event.target.value);
@@ -107,4 +107,18 @@ function validarForm(e) {
 	}
 
 	return error ? false : true;
+}
+
+function continuar(step) {
+	switch(step) {
+		case 1:
+			renderDomicilio();
+		break;
+	}
+}
+
+function renderDomicilio() {
+	let f = $("form");
+	f.empty();
+	f.append("<p> new paragraph </p>");
 }
