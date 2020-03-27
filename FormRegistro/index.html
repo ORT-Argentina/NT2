@@ -22,25 +22,72 @@
     <div class="col-8">
 	  <form name="registro" onsubmit="return validarForm(event);">
 		<div class="form-group tab" name="datosPersonales">
-			<div class="form-group">
-				<label for="txtNombre">Nombre</label>
-				<div class="input-group mb-3">
-					<input oninput="this.className = ''" type="text" class="form-control" id="txtNombre" placeholder="Ingrese su nombre" name="nombre" data-info="Completa la información de este campo para continuar">
-					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+			<div class="row"><!--Nombre-->
+				<div class="form-group col-sm-6"><!--NOMBRE-->
+					<label for="txtNombre">Nombre</label>
+					<div class="input-group mb-3">
+						<input oninput="this.className = ''" type="text" class="form-control" id="txtNombre" placeholder="Ingrese su nombre" name="nombre" data-info="Completa la información de este campo para continuar">
+						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					</div>
+				</div>
+				<div class="form-group col-sm-6"><!--APELLIDO-->
+					<label for="txtApellido">Apellido</label>
+					<div class="input-group mb-3">
+						<input oninput="this.className = ''" type="text" class="form-control" id="txtApellido" placeholder="Ingreso su Apellido" data-info="Completa la información de este campo para continuar">
+					</div>
 				</div>
 			</div>
-			<div class="form-group">
-			    <label for="txtApellido">Apellido</label>
+			<div class="form-group"><!--NACIONALIDAD-->
+				<label for="txtNacionalidad">Nacionalidad</label>
 			    <div class="input-group mb-3">
-			    	<input oninput="this.className = ''" type="text" class="form-control" id="txtApellido" placeholder="Ingreso su Apellido" data-info="Completa la información de este campo para continuar">
+					<select class="form-control" id="txtFechaNacimiento" name="txtFechaNacimiento">
+						<option value="0">-</option>
+						<option value="1">Argentino/a</option>
+						<option value="2">Colombiano/a</option>
+						<option value="3">Venezolano/a</option>
+					</select>
 			    </div>
 			</div>
-			<div class="form-group">
+			<div class="form-group"><!--GENERO-->
+				<label for="txtGenero">Genero</label>
+			    <div class="input-group mb-3">
+					<select class="form-control" id="txtGenero" name="txtGenero">
+						<option value="0">No especifica</option>
+						<option value="1">Masculino</option>
+						<option value="2">Femenino</option>
+					</select>
+			    </div>
+			</div>
+			<div class="row"><!--Documento-->
+				<div class="form-group col-sm-6"><!--TIPO DE DOCUMENTO-->
+					<label for="txtDocumento">Tipo de Documento</label>
+					<div class="input-group mb-3">
+						<select class="form-control" id="txtDocumento" name="txtDocumento">
+							<option value="1">DNI</option>
+							<option value="2">Pasaporte</option>
+						</select>
+					</div>
+				</div>	
+				<div class="form-group col-sm-6"><!--NUMERO DE DOCUMENTO-->
+					<label for="txtNroDocumento">Numero de Documento</label>
+					<div class="input-group mb-3">
+						<input oninput="this.className = ''" type="text" class="form-control" id="txtNroDocumento" placeholder="Ingreso su numero de documento" data-info="Completa la información de este campo para continuar">
+					</div>
+				</div>
+			</div>
+			<div class="form-group"><!--NUMERO DE TRAMITE-->
+				<label for="txtNroTramite">Numero de Tramite</label>
+			    <div class="input-group mb-3">
+			    	<input oninput="this.className = ''" type="text" class="form-control" id="txtNroTramite" placeholder="Ingreso su numero de tramite" data-info="Completa la información de este campo para continuar">
+			    </div>
+			</div>	
+			<div class="form-group"><!--FECHA DE NACIMIENTO-->
 				<label for="txtFechaNacimiento">Fecha de Nacimiento</label>
 			    <div class="input-group mb-3">
-			    	<input oninput="this.className = ''" type="text" class="form-control" id="txtFechaNacimiento" placeholder="Ingreso Fecha de nacimiento" data-info="Completa la información de este campo para continuar">
+			    	<input oninput="this.className = ''" type="date" class="form-control" id="txtNacionalidad" placeholder="Ingreso su nacionalidad" data-info="Completa la información de este campo para continuar">
 			    </div>
 			</div>
+
 		</div>
 
 		<div class="form-group tab" name="datosDomicilio">
