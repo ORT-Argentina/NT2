@@ -20,51 +20,168 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-8">
-      <form name="registro" onsubmit="return validarForm(event);">
-
-      	<div class="row">
-    		<div class="col-6">
-			  <div class="form-group">
-			    <label for="txtNombre">Nombre</label>
-			    <div class="input-group mb-3">
-			    	<div class="input-group-prepend">
-				    	<span class="input-group-text" id="basic-addon1">
-				    		<i class="fas fa-address-book text-primary"></i>
-				    	</span>
-				  	</div>
-			    	<input type="text" class="form-control" id="txtNombre" placeholder="Ingrese su nombre" name="nombre" data-info="Completa la información de este campo para continuar">
-			    	<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
-			    </div>
-			  </div>
+	  <form name="registro" onsubmit="return validarForm(event);">
+		<div class="form-group tab" name="datosDomicilio">
+			<div class="form-group">
+				<label for="txtNombre">Nombre</label>
+				<div class="input-group mb-3">
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtNombre" placeholder="Ingrese su nombre" name="nombre" data-info="Completa la información de este campo para continuar">
+					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+				</div>
 			</div>
-			<div class="col-6">
-			  <div class="form-group">
+			<div class="form-group">
 			    <label for="txtApellido">Apellido</label>
 			    <div class="input-group mb-3">
-			    	<div class="input-group-prepend">
-				    	<span class="input-group-text" id="basic-addon1">
-				    		<i class="fas fa-address-book text-primary"></i>
-				    	</span>
-				  	</div>
-			    	<input type="text" class="form-control" id="txtApellido" placeholder="Ingreso su Apellido" data-info="Completa la información de este campo para continuar">
+			    	<input oninput="this.className = ''" type="text" class="form-control" id="txtApellido" placeholder="Ingreso su Apellido" data-info="Completa la información de este campo para continuar">
 			    </div>
-			  </div>
+			</div>
+			<div class="form-group">
+				<label for="txtFechaNacimiento">Fecha de Nacimiento</label>
+			    <div class="input-group mb-3">
+			    	<input oninput="this.className = ''" type="text" class="form-control" id="txtFechaNacimiento" placeholder="Ingreso Fecha de nacimiento" data-info="Completa la información de este campo para continuar">
+			    </div>
 			</div>
 		</div>
 
-	  <div class="form-group">
-	    <label for="txtDni">DNI </label>
-	    <div class="input-group mb-3">
-	    	<div class="input-group-prepend">
-		    	<span class="input-group-text" id="basic-addon1">
-		    		<i class="fas fa-id-card text-primary"></i>
-		    	</span>
-		  	</div>
-	    	<input type="text" class="form-control" id="txtDni" placeholder="Ingreso su DNI" data-info="Completa la información de este campo para continuar">
-	    </div>
-	  </div>
-		  
-		  <div class="form-group">
+		<div class="form-group tab" name="datosDomicilio">
+			<div class="form-group">
+				<label for="txtCalleD">Calle</label>
+				<div class="input-group mb-3">
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtCalleD" placeholder="Ingrese su calle" name="calle" data-info="Completa la información de este campo para continuar">
+					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtAlturaD">Altura</label>
+				<div class="input-group mb-3">
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtAlturaD" placeholder="Ingrese altura del domicilio" name="altura" data-info="Completa la información de este campo para continuar">
+					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label for="txtPiso">Piso/Dto</label>
+				<div class="input-group mb-3">
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtPiso" placeholder="Ingrese el piso" name="altura" data-info="Completa la información de este campo para continuar">
+					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label for="txtAlturaD">Altura</label>
+				<div class="input-group mb-3">
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtAlturaD" placeholder="Ingrese altura del domicilio" name="altura" data-info="Completa la información de este campo para continuar">
+					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label for="cmbProvincia">Provincia </label>
+				<select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
+					<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+					<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+					<option value="buenos-aires">Buenos Aires</option>
+					<option value="santa-fe">Santa Fe</option>
+					<option value="la-pampa">La Pampa</option>
+					<option value="mendoza">Mendoza</option>
+				</select>
+			  </div>
+	
+			  <div class="form-group" style="display:none;">
+				<label for="cmbLocalidad">Localidad</label>
+				<select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
+					<option value="retiro">Retiro</option>
+					<option value="nunez">Nuñez</option>
+					<option value="villa-del-parque">Villa del Parque</option>
+					<option value="monte-castro">Monte Castro</option>
+					<option value="caballito">Caballito</option>
+				</select>
+			  </div>
+
+
+		</div>
+
+
+		<div class="form-group tab" name="datosContacto">
+			<div class="form-group">
+				<label for="txtCelular">Celular</label>
+				<div class="input-group mb-3">
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtCelular" placeholder="Ingrese su telefono celular" name="celular" data-info="Completa la información de este campo para continuar">
+					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtEmail">Correo electronico</label>
+				<div class="input-group mb-3">
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtEmail" placeholder="Ingrese su email" name="email" data-info="Completa la información de este campo para continuar">
+					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtGithub">Cuenta de Github</label>
+				<div class="input-group mb-3">
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtGithub" placeholder="Ingrese su cuenta de github" name="altura" data-info="Completa la información de este campo para continuar">
+					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group tab" name="datosLaborales">
+			<div class="form-group">
+				<label for="txtCalleL">Calle</label>
+				<div class="input-group mb-3">
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtCalleL" placeholder="Ingrese su calle" name="calle" data-info="Completa la información de este campo para continuar">
+					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtAlturaL">Altura</label>
+				<div class="input-group mb-3">
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtAlturaL" placeholder="Ingrese altura del domicilio" name="altura" data-info="Completa la información de este campo para continuar">
+					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group tab" name="motivoSolicitud">
+			<div class="form-group">
+				<label for="txtMotivo">Motivo</label>
+				<div class="input-group mb-3">
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtMotivo" placeholder="Ingrese el motivo de la solicitud" name="motivo" data-info="Completa la información de este campo para continuar">
+					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="chkTerms">
+					<label class="form-check-label" for="chkTerms">
+					  Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
+					</label>
+				</div>
+			</div>
+			
+		</div>
+	
+		
+		<div style="overflow:auto;">
+			<div style="float:right;">
+			<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+			<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+		</div>
+		
+		<!-- Circles which indicates the steps of the form: -->
+		<div style="text-align:center;margin-top:40px;">
+		<span class="step"></span>
+		<span class="step"></span>
+		<span class="step"></span>
+		<span class="step"></span>
+		</div>
+	
+      	
+
+	 
+		  <div class="form-group" hidden>
 		    <label for="cmbProvincia">Provincia </label>
 		    <select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
 	    		<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
@@ -76,7 +193,7 @@
 		    </select>
 		  </div>
 
-		  <div class="form-group" style="display:none;">
+		  <div class="form-group" style="display:none;" hidden>
 		    <label for="cmbLocalidad">Localidad</label>
 		    <select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
 				<option value="retiro">Retiro</option>
@@ -87,42 +204,18 @@
 		    </select>
 		  </div>
 
-		  <div class="form-group">
-		    <label for="txtEmail">E-Mail </label>
-		    <div class="input-group mb-3">
-		    	<div class="input-group-prepend">
 
-			    	<span class="input-group-text" id="basic-addon1">
-			    		<i class="fas fa-at text-primary"></i>
-			    	</span>
-			  	</div>
-		    	<input type="email" class="form-control" id="txtEmail" placeholder="Ingreso su Correo Electronico">
-		    </div>
-		  </div>
-
-			<div class="form-group">
-			    <label for="txtEmail">Teléfono</label>
-			    <div class="input-group mb-3">
-			    	<div class="input-group-prepend">
-				    	<span class="input-group-text" id="basic-addon1">
-				    		<i class="fas fa-phone text-primary"></i>
-				    	</span>
-				  	</div>
-			    	<input type="text" class="form-control" id="txtphone" placeholder="Número de teléfono">
-			    </div>
-			  </div>
-
-			<div class="form-check">
+			<div class="form-check" hidden>
 			  <input class="form-check-input" type="checkbox" value="" id="chkTerms">
 			  <label class="form-check-label" for="chkTerms">
 			    Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
 			  </label>
 			</div>
 
-		  <button type="submit" class="btn btn-primary mt-3">Enviar Registro</button>
+		  <button type="submit" class="btn btn-primary mt-3" hidden>Enviar Registro</button>
 		</form>
     </div>
-    <div class="col bg-dark text-light">
+    <div class="col bg-dark text-light" hidden>
     	<div class="text-warning">
     		<p id="helpInfo">Informaci&oacute;n adicional</p>
     	</div>
