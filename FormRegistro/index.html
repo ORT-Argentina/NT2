@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Formulario de Registro</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/all.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"-->
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+		<a class="navbar-brand text-white" href="#">Formulario de Registro</a>
+	</nav>
+	<div class="progress">
+		<div class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+		</div>
+	</div>
+	<div class="container mt-3">
+		<div class="row">
+			<div class="col-8">
+				<form name="registro" onsubmit="return validarForm(event);">
+
+					<div class="row">
+						<div class="col-6">
+							<div class="form-group">
+								<label for="txtNombre">Nombre</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon1">
+											<i class="fas fa-address-book text-primary"></i>
+										</span>
+									</div>
+									<input type="text" class="form-control" id="txtNombre"
+										placeholder="Ingrese su nombre" name="nombre"
+										data-info="Completa la información de este campo para continuar">
+									<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+								</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<label for="txtApellido">Apellido</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon1">
+											<i class="fas fa-address-book text-primary"></i>
+										</span>
+									</div>
+									<input type="text" class="form-control" id="txtApellido"
+										placeholder="Ingreso su Apellido"
+										data-info="Completa la información de este campo para continuar">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="txtDni">DNI </label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-id-card text-primary"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control" id="txtDni" placeholder="Ingreso su DNI"
+								data-info="Completa la información de este campo para continuar">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="cmbProvincia">Provincia </label>
+						<select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
+							<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+							<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+							<option value="buenos-aires">Buenos Aires</option>
+							<option value="santa-fe">Santa Fe</option>
+							<option value="la-pampa">La Pampa</option>
+							<option value="mendoza">Mendoza</option>
+						</select>
+					</div>
+
+					<div class="form-group" style="display:none;">
+						<label for="cmbLocalidad">Localidad</label>
+						<select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
+							<option value="retiro">Retiro</option>
+							<option value="nunez">Nuñez</option>
+							<option value="villa-del-parque">Villa del Parque</option>
+							<option value="monte-castro">Monte Castro</option>
+							<option value="caballito">Caballito</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="txtEmail">E-Mail </label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-at text-primary"></i>
+								</span>
+							</div>
+							<input type="email" class="form-control" id="txtEmail"
+								placeholder="Ingreso su Correo Electronico">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="txtEmail">Teléfono</label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-phone text-primary"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control" id="txtphone" placeholder="Número de teléfono">
+						</div>
+					</div>
+
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="chkTerms">
+						<label class="form-check-label" for="chkTerms">
+							Aceptar <a href="javascript:void();" data-toggle="modal"
+								data-target="#exampleModal">Terminos y Condiciones</a>
+						</label>
+					</div>
+
+					<button type="submit" class="btn btn-primary mt-3">Enviar Registro</button>
+				</form>
+			</div>
+			<div class="col bg-dark text-light">
+				<div class="text-warning">
+					<p id="helpInfo">Informaci&oacute;n adicional</p>
+				</div>
+			</div>
+		</div>
+		<div class="mt-3"></div>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Terminos y condiciones</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						El usuario (en adelante el “Usuario y/o Ciudadano”) entiende que el acceso y uso de tales
+						Activos Digitales resultará en la aceptación de los presentes Términos y Condiciones. Asimismo,
+						el Usuario entiende que acepta la Política de Privacidad, anexo a los presentes Términos y
+						Condiciones.
+
+						Capacidad para aceptar estos Términos y Condiciones
+						Usted afirma ser mayor de 18 años, menor emancipado o que posee permiso legal de sus padres y/o
+						tutor y que está completamente habilitado y es competente para entender y aceptar sin reservas
+						las obligaciones, afirmaciones, representaciones y garantías establecidas en estos Términos y
+						Condiciones.
+
+						Los Activos Digitales utilizan información provista directamente por los Usuarios, información
+						suministrada por terceros e información cedida a la Subsecretaría de Gobierno Digital por otros
+						Organismos en los términos de lo dispuesto por la Ley de Protección de Datos Personales, Nº Ley
+						25.326. En este último caso, la Subsecretaría de Gobierno Digital no es responsable por daños
+						y/o perjuicios que pudieran generarse por errores en la información cedida por dichos
+						Organismos.
+
+						Derecho Aplicable y Jurisdicción
+						Los presentes Términos y Condiciones se rigen por las leyes de la República Argentina.
+						En caso de surgir cualquier controversia respecto de la interpretación o cumplimiento de los
+						presentes, la misma será dirimida por los Tribunales en lo Contencioso Administrativo Federal
+						con asiento en la Capital Federal.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.mask.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/application.js" type="text/javascript" charset="utf-8" async defer></script>
+
+</html>

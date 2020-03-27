@@ -2,7 +2,7 @@
 Programación en nuevas tecnologías 2
 
 # Tareas del 19-Mar-2020
-
+ cd
 La idea es poder comprender bien el uso de repositorios Remotos y la utilización del comando GIT.
 
 Check List para comenzar la actividad

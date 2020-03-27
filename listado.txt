@@ -12,12 +12,9 @@ Mateo Cernaz - Grupo 5
 Martín Rivas
 Timothy Wider
 Pablo Tapia - No tengo grupo
-<<<<<<< HEAD
 Brian Alvarez - Sin Grupo
-=======
 Lucas Altamirano
 Muhamad Mansour 
 Matias Menendez
 Maria Jose del Pino
->>>>>>> 129ae8665658d7a022a53d4cdbb20cf5f85a7384
 Pablo Acquafresca - grupo 5
