@@ -26,128 +26,206 @@
 				<form name="registro" onsubmit="return validarForm(event);">
 
 					<!-- datos personales -->
-					<div class="form-group">
-						<label for="cmbNacionalidad">Nacionalidad </label>
-						<select class="form-control" id="cmbNacionalidad" onchange="checkNacionalidad(event, this)">
-							<option value="" data-ort="no hay nada">Seleccione su nacionalidad</option>
-							<option value="argentino" data-ort="data adiconal">Argentino</option>
-							<option value="extranjero">Extranjero</option>
-						</select>
-					</div>
 
-					<div class="form-group">
-						<label for="cmbGenero">Género </label>
-						<select class="form-control" id="cmbGenero">
-							<option value="" data-ort="no hay nada">Seleccione su género</option>
-							<option value="femenino" data-ort="data adiconal">Femenino</option>
-							<option value="masculino">Masculino</option>
-							<option value="otro">Otro</option>
-						</select>
-					</div>
+					<div id="step1">
 
-					<!-- tipo y nro de documento -->
+						<div class="form-group">
+							<label for="cmbNacionalidad">Nacionalidad </label>
+							<select class="form-control" id="cmbNacionalidad" onchange="checkNacionalidad(event, this)">
+								<option value="" data-ort="no hay nada">Seleccione su nacionalidad</option>
+								<option value="argentino" data-ort="data adiconal">Argentino</option>
+								<option value="extranjero">Extranjero</option>
+							</select>
+						</div>
 
-					<div class="row">
-						<div class="col-4">
-							<div class="form-group">
-								<label for="cmbTipoDocumento">Tipo de Documento </label>
-								<select class="form-control" id="cmbTipoDocumento">
-									<option value="" data-ort="no hay nada">Seleccione su tipo de documento</option>
-									<option value="dni" data-ort="data adiconal">DNI</option>
-									<option value="cedula">Cédula</option>
-									<option value="otro">Otro</option>
-								</select>
+						<div class="form-group">
+							<label for="cmbGenero">Género </label>
+							<select class="form-control" id="cmbGenero">
+								<option value="" data-ort="no hay nada">Seleccione su género</option>
+								<option value="femenino" data-ort="data adiconal">Femenino</option>
+								<option value="masculino">Masculino</option>
+								<option value="otro">Otro</option>
+							</select>
+						</div>
+
+						<div class="row">
+							<div class="col-4">
+								<div class="form-group">
+									<label for="cmbTipoDocumento">Tipo de Documento </label>
+									<select class="form-control" id="cmbTipoDocumento">
+										<option value="" data-ort="no hay nada">Seleccione su tipo de documento</option>
+										<option value="dni" data-ort="data adiconal">DNI</option>
+										<option value="cedula">Cédula</option>
+										<option value="otro">Otro</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="col-4">
+								<div class="form-group">
+									<label for="txtNroDocumento">Número de Documento</label>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="basic-addon1">
+												<i class="fas fa-id-card text-primary"></i>
+											</span>
+										</div>
+										<input type="text" class="form-control" id="txtNroDocumento"
+											placeholder="Ingrese su número de documento"
+											data-info="Completa la información de este campo para continuar">
+									</div>
+								</div>
+							</div>
+
+							<div class="col-4">
+								<div class="form-group">
+									<label for="txtNumeroTramite">Número de Trámite del DNI</label>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="basic-addon1">
+												<i class="fas fa-id-card text-primary"></i>
+											</span>
+										</div>
+										<input type="text" class="form-control" id="txtNumeroTramite"
+											placeholder="Ingrese el número de trámite de su DNI" disabled>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="form-group">
+							<label for="dateFechaNac">Fecha de Nacimiento</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">
+										<i class="fas fa-calendar text-primary"></i>
+									</span>
+								</div>
+								<input type="date" class="form-control" id="dateFechaNac" name="fechaNac">
 							</div>
 						</div>
-						<div class="col-4">
-							<div class="form-group">
-								<label for="txtNroDocumento">Número de Documento</label>
-								<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="basic-addon1">
-											<i class="fas fa-id-card text-primary"></i>
-										</span>
+
+						<div class="row">
+							<div class="col-6">
+								<div class="form-group">
+									<label for="txtNombre">Nombre</label>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="basic-addon1">
+												<i class="fas fa-address-book text-primary"></i>
+											</span>
+										</div>
+										<input type="text" class="form-control" id="txtNombre"
+											placeholder="Ingrese su nombre" name="nombre"
+											data-info="Completa la información de este campo para continuar">
+										<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
 									</div>
-									<input type="text" class="form-control" id="txtNroDocumento"
-										placeholder="Ingrese su número de documento"
-										data-info="Completa la información de este campo para continuar">
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-group">
+									<label for="txtApellido">Apellido</label>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="basic-addon1">
+												<i class="fas fa-address-book text-primary"></i>
+											</span>
+										</div>
+										<input type="text" class="form-control" id="txtApellido"
+											placeholder="Ingreso su Apellido"
+											data-info="Completa la información de este campo para continuar">
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-4">
-							<div class="form-group">
-								<label for="txtNumeroTramite">Número de Trámite del DNI</label>
-								<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="basic-addon1">
-											<i class="fas fa-id-card text-primary"></i>
-										</span>
-									</div>
-									<input type="text" class="form-control" id="txtNumeroTramite"
-										placeholder="Ingrese el número de trámite de su DNI"
-										disabled>
-								</div>
-							</div>
-						</div>
+
+						<button type="button" class="btn btn-primary mt-3" id="botonStep1"
+							onclick="continuar(1)">Continuar</button>
+
 					</div>
 
-					<!-- end tipo y nro de documento -->
+					<!-- end datos personales -->
 
-					<div class="form-group">
-						<label for="dateFechaNac">Fecha de Nacimiento</label>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="basic-addon1">
-									<i class="fas fa-calendar text-primary"></i>
-								</span>
-							</div>
-							<input type="date" class="form-control" id="dateFechaNac" name="fechaNac"> 
-						</div>
-					</div>
+					<!-- domicilio -->
 
-					<div class="row">
-						<div class="col-6">
-							<div class="form-group">
-								<label for="txtNombre">Nombre</label>
-								<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="basic-addon1">
-											<i class="fas fa-address-book text-primary"></i>
-										</span>
-									</div>
-									<input type="text" class="form-control" id="txtNombre"
-										placeholder="Ingrese su nombre" name="nombre"
-										data-info="Completa la información de este campo para continuar">
-									<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					<div id="step2" hidden>
+
+						<div class="form-group">
+							<label for="txtNombre">Calle</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">
+										<i class="fas fa-address-book text-primary"></i>
+									</span>
 								</div>
+								<input type="text" class="form-control" id="txtCalle" placeholder="Ingrese Calle"
+									name="calle" data-info="Completa la información de este campo para continuar">
+								<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
 							</div>
 						</div>
-						<div class="col-6">
-							<div class="form-group">
-								<label for="txtApellido">Apellido</label>
-								<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="basic-addon1">
-											<i class="fas fa-address-book text-primary"></i>
-										</span>
-									</div>
-									<input type="text" class="form-control" id="txtApellido"
-										placeholder="Ingreso su Apellido"
-										data-info="Completa la información de este campo para continuar">
-								</div>
-							</div>
-						</div>
-					</div>
 
-					<button type="button" class="btn btn-primary mt-3" onclick="continuar(1)">Continuar</button>
-				</form>
+						<div class="form-group">
+							<label for="txtApellido">Altura</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">
+										<i class="fas fa-address-book text-primary"></i>
+									</span>
+								</div>
+								<input type="text" class="form-control" id="txtAltura" placeholder="Ingrese Altura"
+									data-info="Completa la información de este campo para continuar">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="txtDni">Piso/Dpto </label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">
+										<i class="fas fa-id-card text-primary"></i>
+									</span>
+								</div>
+								<input type="text" class="form-control" id="txtPisoDpto" placeholder="Ingrese Piso/Dpto"
+									data-info="Completa la información de este campo para continuar">
+							</div>
+						</div>
+
+						<div class="form-group" id="provincia">
+							<label for="cmbProvincia">Provincia </label>
+							<select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
+								<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+								<option value="caba" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+								<option value="buenos-aires">Buenos Aires</option>
+								<option value="santa-fe">Santa Fe</option>
+								<option value="la-pampa">La Pampa</option>
+								<option value="mendoza">Mendoza</option>
+							</select>
+						</div>
+
+						<div class="form-group" id="localidad">
+							<label for="cmbLocalidad">Ciudad</label>
+							<select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
+								<option value="retiro">Retiro</option>
+								<option value="nunez">Nuñez</option>
+								<option value="villa-del-parque">Villa del Parque</option>
+								<option value="monte-castro">Monte Castro</option>
+								<option value="caballito">Caballito</option>
+							</select>
+						</div>
+
+						<button type="button" class="btn btn-primary mt-3" id="botonStep2"
+							onclick="continuar(2)">Continuar</button>
+
+					</div>
+					<!-- end domicilio -->
+
 			</div>
-			<div class="col bg-dark text-light">
-				<div class="text-warning">
-					<p id="helpInfo">Informaci&oacute;n adicional</p>
-				</div>
-			</div>
+
 		</div>
+
+		</form>
+
 		<div class="mt-3"></div>
 		<!-- Modal -->
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
