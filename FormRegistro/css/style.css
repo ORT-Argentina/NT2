@@ -65,3 +65,7 @@ input.invalid {
 .step.finish {
   background-color: #4CAF50;
 }
+
+.iconsColor{
+  color:rgb(0, 81, 255);
+}
