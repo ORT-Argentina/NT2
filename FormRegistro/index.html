@@ -20,273 +20,328 @@
 </div>
 <div class="container mt-3">
   <div class="row">
-    <div class="col-8">
-	  <form name="registro" onsubmit="return validarForm(event);">
-		<div class="form-group tab" name="datosPersonales">
-			<div class="row"><!--Nombre-->
-				<div class="form-group col-sm-6"><!--NOMBRE-->
-					<label for="txtNombre">Nombre</label>
-					<div class="input-group mb-3">
-						<span class="input-group-text" id="basic-addon1">
-				    		<i class="iconsColor fas fa-address-book text-primary"></i>
-				    	</span>
-						<input type="text" class="form-control" id="txtNombre" placeholder="Ingrese su nombre" name="nombre" data-info="Completa la información de este campo para continuar">
+    <div class="col-12">
+	  	<form name="registro" onsubmit="return validInput(event);">
+			<div class="form-group tab" name="datosPersonales">
+				<div class="row"><!--Nombre-->
+					<div class="form-group col-sm-6 col-lg-6"><!--NOMBRE-->
+						<label for="txtNombre">Nombre</label>
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="iconsColor fas fa-address-book text-primary"></i>
+							</span>
+							<input type="text" class="form-control" id="txtNombre" placeholder="Ingrese su nombre" name="nombre" data-info="Completa la información de este campo para continuar">
+						</div>
+					</div>
+					<div class="form-group col-sm-6 col-lg-6"><!--APELLIDO-->
+						<label for="txtApellido">Apellido</label>
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="iconsColor fas fa-address-book text-primary"></i>
+							</span>
+							<input type="text" class="form-control" id="txtApellido" placeholder="Ingreso su Apellido" data-info="Completa la información de este campo para continuar">
+						</div>
 					</div>
 				</div>
-				<div class="form-group col-sm-6"><!--APELLIDO-->
-					<label for="txtApellido">Apellido</label>
+
+				<div class="form-group"><!--NACIONALIDAD-->
+					<label for="txtNacionalidad">Nacionalidad</label>
 					<div class="input-group mb-3">
 						<span class="input-group-text" id="basic-addon1">
-				    		<i class="iconsColor fas fa-address-book text-primary"></i>
-				    	</span>
-						<input type="text" class="form-control" id="txtApellido" placeholder="Ingreso su Apellido" data-info="Completa la información de este campo para continuar">
+							<i class="iconsColor fas fa-globe-europe"></i>
+						</span>
+						<select class="form-control" id="txtFechaNacimiento" name="txtFechaNacimiento">
+							<option value="0">-</option>
+							<option value="1">Argentino/a</option>
+							<option value="2">Colombiano/a</option>
+							<option value="3">Venezolano/a</option>
+						</select>
 					</div>
 				</div>
-			</div>
 
-			<div class="form-group"><!--NACIONALIDAD-->
-				<label for="txtNacionalidad">Nacionalidad</label>
-			    <div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">
-						<i class="iconsColor fas fa-globe-europe"></i>
-					</span>
-					<select class="form-control" id="txtFechaNacimiento" name="txtFechaNacimiento">
-						<option value="0">-</option>
-						<option value="1">Argentino/a</option>
-						<option value="2">Colombiano/a</option>
-						<option value="3">Venezolano/a</option>
-					</select>
-			    </div>
-			</div>
+				<div class="form-group"><!--GENERO-->
+					<label for="txtGenero">Genero</label>
+					<div class="input-group mb-3">
+						<span class="input-group-text" id="basic-addon1">
+							<i class="iconsColor fas fa-venus-mars"></i>
+						</span>
+						<select class="form-control" id="txtGenero" name="txtGenero">
+							<option value="0">No especifica</option>
+							<option value="1">Masculino</option>
+							<option value="2">Femenino</option>
+						</select>
+					</div>
+				</div>
 
-			<div class="form-group"><!--GENERO-->
-				<label for="txtGenero">Genero</label>
-			    <div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">
-						<i class="iconsColor fas fa-venus-mars"></i>
-					</span>
-					<select class="form-control" id="txtGenero" name="txtGenero">
-						<option value="0">No especifica</option>
-						<option value="1">Masculino</option>
-						<option value="2">Femenino</option>
-					</select>
-			    </div>
-			</div>
+				<div class="row"><!--Documento-->
+					<div class="form-group col-sm-6"><!--TIPO DE DOCUMENTO-->
+						<label for="txtDocumento">Tipo de Documento</label>
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="iconsColor fas fa-id-card text-primary"></i>
+							</span>
+							<select class="form-control" id="txtDocumento" name="txtDocumento">
+								<option value="1">DNI</option>
+								<option value="2">Pasaporte</option>
+							</select>
+						</div>
+					</div>	
+					<div class="form-group col-sm-6"><!--NUMERO DE DOCUMENTO-->
+						<label for="txtNroDocumento">Numero de Documento</label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="txtNroDocumento" placeholder="Ingreso su numero de documento" data-info="Completa la información de este campo para continuar">
+						</div>
+					</div>
+				</div>
 
-			<div class="row"><!--Documento-->
-				<div class="form-group col-sm-6"><!--TIPO DE DOCUMENTO-->
-					<label for="txtDocumento">Tipo de Documento</label>
+				<div class="form-group"><!--NUMERO DE TRAMITE-->
+					<label for="txtNroTramite">Numero de Tramite</label>
 					<div class="input-group mb-3">
 						<span class="input-group-text" id="basic-addon1">
 							<i class="iconsColor fas fa-id-card text-primary"></i>
 						</span>
-						<select class="form-control" id="txtDocumento" name="txtDocumento">
-							<option value="1">DNI</option>
-							<option value="2">Pasaporte</option>
-						</select>
+						<input type="text" class="form-control" id="txtNroTramite" placeholder="Ingreso su numero de tramite" data-info="Completa la información de este campo para continuar">
 					</div>
 				</div>	
-				<div class="form-group col-sm-6"><!--NUMERO DE DOCUMENTO-->
-					<label for="txtNroDocumento">Numero de Documento</label>
+				
+				<div class="form-group"><!--FECHA DE NACIMIENTO-->
+					<label for="txtFechaNacimiento">Fecha de Nacimiento</label>
 					<div class="input-group mb-3">
-						<input type="text" class="form-control" id="txtNroDocumento" placeholder="Ingreso su numero de documento" data-info="Completa la información de este campo para continuar">
+						<span class="input-group-text" id="basic-addon1">
+							<i class="iconsColor fas fa-birthday-cake"></i>
+						</span>
+						<input type="date" class="form-control" id="txtFechaNacimiento" data-info="Completa la información de este campo para continuar">
 					</div>
 				</div>
 			</div>
 
-			<div class="form-group"><!--NUMERO DE TRAMITE-->
-				<label for="txtNroTramite">Numero de Tramite</label>
-			    <div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">
-						<i class="iconsColor fas fa-id-card text-primary"></i>
-					</span>
-			    	<input type="text" class="form-control" id="txtNroTramite" placeholder="Ingreso su numero de tramite" data-info="Completa la información de este campo para continuar">
-			    </div>
+			<div class="form-group tab" name="datosDomicilio">  <!-- DATOS DE DOMICILIO  -->
+				<div class="form-group">  <!--calle domicilio-->
+					<label for="txtCalleD">Calle</label>
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" id="txtCalleD" placeholder="Ingrese su calle de domicilio" name="calle" data-info="Completa la información de este campo para continuar">
+						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					</div>
+				</div>
+				<div class="form-group"> <!--Altura domicilio   -->
+					<label for="txtAlturaD">Altura</label>
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" id="txtAlturaD" placeholder="Ingrese altura del domicilio" name="altura" data-info="Completa la información de este campo para continuar">
+						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					</div>
+				</div>
+
+
+				<div class="form-group">  <!-- Piso dpto Domicilio-->
+					<label for="txtPiso">Piso/Dto</label>
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" id="txtPiso" placeholder="Ingrese el piso" name="altura" data-info="Completa la información de este campo para continuar">
+						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					</div>
+				</div>
+
+
+				<div class="form-group">  <!--Provincia Domicilio -->
+					<label for="cmbProvincia">Provincia </label>
+					<select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
+						<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+						<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+						<option value="buenos-aires">Buenos Aires</option>
+						<option value="santa-fe">Santa Fe</option>
+						<option value="la-pampa">La Pampa</option>
+						<option value="mendoza">Mendoza</option>
+					</select>
+				</div>
+		
+				<div class="form-group" style="display:none;">  <!--Loocalidad Domicilio-->
+					<label for="cmbLocalidad">Localidad</label>
+					<select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
+						<option value="retiro">Retiro</option>
+						<option value="nunez">Nuñez</option>
+						<option value="villa-del-parque">Villa del Parque</option>
+						<option value="monte-castro">Monte Castro</option>
+						<option value="caballito">Caballito</option>
+					</select>
+				</div>
+
+
+			</div>
+
+
+			<div class="form-group tab" name="datosContacto">  <!-- DATOS DE CONTACTO  -->
+				<div class="form-group">  <!-- celular Contacto  -->
+					<label for="txtCelular">Celular</label>
+					<div class="input-group mb-3">
+						<span class="input-group-text" id="basic-addon1">
+							<i class="fas fa-mobile-alt"></i></i>
+						</span>
+						<input type="text" class="form-control" id="txtCelular" placeholder="Ingrese su telefono celular" name="celular" data-info="Completa la información de este campo para continuar">
+						
+					</div>
+
+
+				</div>
+				<div class="form-group">  <!--  Email Contacto-->
+					<label for="txtEmail">Correo electronico</label>
+					<div class="input-group mb-3">
+						<span class="input-group-text" id="basic-addon1">
+							<i class="far fa-envelope"></i>
+						</span>
+						<input type="text" class="form-control" id="txtEmail" placeholder="Ingrese su email de contacto" name="email" data-info="Completa la información de este campo para continuar">
+						
+					</div>
+				</div>
+				<div class="form-group">  <!--  Cuenta Github -->
+					<label for="txtGithub">Cuenta de Github</label>
+					<div class="input-group mb-3">
+						<span class="input-group-text" id="basic-addon1">
+							<i class="fab fa-github"></i>
+						</span>
+						<input type="text" class="form-control" id="txtGithub" placeholder="Ingrese su cuenta de github" name="altura" data-info="Completa la información de este campo para continuar">
+						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group tab" name="datosLaborales">  <!-- DATOS LABORALES  -->
+				<div class="form-group">
+					<label for="txtLugarTrabajo">Lugar de Trabajo</label>  <!-- LUGAR DE TRABAJO -->
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" id="txtLugarTrabajo" placeholder="Ingrese el nombre de su empresa" name="lugarTrabajo" data-info="Completa la información de este campo para continuar">
+						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6 col-lg-6">  <!-- Calle trabajo  -->
+						<label for="txtCalleL">Calle</label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="txtCalleL" placeholder="Ingrese su calle" name="calle" data-info="Completa la información de este campo para continuar">
+						</div>
+					</div>
+					<div class="form-group col-sm-6 col-lg-3">
+						<label for="txtAlturaL">Altura</label> <!-- Altura de calle trabajo -->
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="txtAlturaL" placeholder="Altura del domicilio" name="altura" data-info="Completa la información de este campo para continuar">
+							<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+						</div>
+					</div>
+					<div class="form-group col-sm-6 col-lg-3">
+						<label for="txtPisoL">Piso/Dpto</label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="txtPisoL" placeholder="Piso/Dpto de oficina" name="piso/dptoL" data-info="Completa la información de este campo para continuar">
+							<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-sm-6 col-lg-6">
+						<label for="cmbProvinciaL">Provincia </label>
+						<select class="form-control" id="cmbProvinciaL" onchange="checkPronvincia(event, this)">
+							<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+							<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+							<option value="buenos-aires">Buenos Aires</option>
+							<option value="santa-fe">Santa Fe</option>
+							<option value="la-pampa">La Pampa</option>
+							<option value="mendoza">Mendoza</option>
+						</select>
+					</div>
+
+					<div class="form-group col-sm-6 col-lg-6" style="display:none;">
+						<label for="cmbLocalidadL">Localidad</label>
+						<select class="form-control" id="cmbLocalidadL" name="cmbLocalidadL">
+							<option value="retiro">Retiro</option>
+							<option value="nunez">Nuñez</option>
+							<option value="villa-del-parque">Villa del Parque</option>
+							<option value="monte-castro">Monte Castro</option>
+							<option value="caballito">Caballito</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="form-group col-sm-6 col-lg-6" style="display:none;">
+						<label for="txtTelefonoL">Telefono</label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="txtTelefonoL" placeholder="Ingrese su telefono" name="telefonoL" data-info="Completa la información de este campo para continuar">
+							<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<div class="form-group col-sm-6 col-lg-6" style="display:none;">
+						<label for="profeSalud">¿Es Profesional de Salud?</label>
+						<input class="form-check-input" type="checkbox" value="" id="chkPSalud">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group tab" name="motivoSolicitud">
+				<div class="form-group">
+					<label for="txtMotivo">Motivo</label>
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" id="txtMotivo" placeholder="Ingrese el motivo de la solicitud" name="motivo" data-info="Completa la información de este campo para continuar">
+						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="chkTerms">
+						<label class="form-check-label" for="chkTerms">
+						Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
+						</label>
+					</div>
+				</div>
+				
+			</div>
+		
+			
+			<div style="overflow:auto;">
+				<div class="text-center">
+					<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+					<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+				</div>
+			</div>
+			
+			<!-- Circles which indicates the steps of the form: -->
+			<div style="text-align:center;margin-top:40px;">
+			<span class="step"></span>
+			<span class="step"></span>
+			<span class="step"></span>
+			<span class="step"></span>
 			</div>	
-			
-			<div class="form-group"><!--FECHA DE NACIMIENTO-->
-				<label for="txtFechaNacimiento">Fecha de Nacimiento</label>
-			    <div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">
-						<i class="iconsColor fas fa-birthday-cake"></i>
-					</span>
-			    	<input type="date" class="form-control" id="txtNacionalidad" placeholder="Ingreso su nacionalidad" data-info="Completa la información de este campo para continuar">
-			    </div>
-			</div>
-		</div>
 
-		<div class="form-group tab" name="datosDomicilio">  <!-- DATOS DE DOMICILIO  -->
-			<div class="form-group">  <!--calle domicilio-->
-				<label for="txtCalleD">Calle</label>
-				<div class="input-group mb-3">
-					<input type="text" class="form-control" id="txtCalleD" placeholder="Ingrese su calle de domicilio" name="calle" data-info="Completa la información de este campo para continuar">
-					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
-				</div>
-			</div>
-			<div class="form-group"> <!--Altura domicilio   -->
-				<label for="txtAlturaD">Altura</label>
-				<div class="input-group mb-3">
-					<input type="text" class="form-control" id="txtAlturaD" placeholder="Ingrese altura del domicilio" name="altura" data-info="Completa la información de este campo para continuar">
-					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
-				</div>
-			</div>
-
-
-			<div class="form-group">  <!-- Piso dpto Domicilio-->
-				<label for="txtPiso">Piso/Dto</label>
-				<div class="input-group mb-3">
-					<input type="text" class="form-control" id="txtPiso" placeholder="Ingrese el piso" name="altura" data-info="Completa la información de este campo para continuar">
-					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
-				</div>
-			</div>
-
-
-			<div class="form-group">  <!--Provincia Domicilio -->
-				<label for="cmbProvincia">Provincia </label>
-				<select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
-					<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
-					<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
-					<option value="buenos-aires">Buenos Aires</option>
-					<option value="santa-fe">Santa Fe</option>
-					<option value="la-pampa">La Pampa</option>
-					<option value="mendoza">Mendoza</option>
-				</select>
-			  </div>
-	
-			  <div class="form-group" style="display:none;">  <!--Loocalidad Domicilio-->
-				<label for="cmbLocalidad">Localidad</label>
-				<select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
-					<option value="retiro">Retiro</option>
-					<option value="nunez">Nuñez</option>
-					<option value="villa-del-parque">Villa del Parque</option>
-					<option value="monte-castro">Monte Castro</option>
-					<option value="caballito">Caballito</option>
-				</select>
-			  </div>
-
-
-		</div>
-
-
-		<div class="form-group tab" name="datosContacto">  <!-- DATOS DE CONTACTO  -->
-			<div class="form-group">  <!-- celular Contacto  -->
-				<label for="txtCelular">Celular</label>
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">
-						<i class="fas fa-mobile-alt"></i></i>
-					</span>
-					<input type="text" class="form-control" id="txtCelular" placeholder="Ingrese su telefono celular" name="celular" data-info="Completa la información de este campo para continuar">
-					
-				</div>
-
-
-			</div>
-			<div class="form-group">  <!--  Email Contacto-->
-				<label for="txtEmail">Correo electronico</label>
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">
-						<i class="far fa-envelope"></i>
-					</span>
-					<input type="text" class="form-control" id="txtEmail" placeholder="Ingrese su email de contacto" name="email" data-info="Completa la información de este campo para continuar">
-					
-				</div>
-			</div>
-			<div class="form-group">  <!--  Cuenta Github -->
-				<label for="txtGithub">Cuenta de Github</label>
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">
-						<i class="fab fa-github"></i>
-					</span>
-					<input type="text" class="form-control" id="txtGithub" placeholder="Ingrese su cuenta de github" name="altura" data-info="Completa la información de este campo para continuar">
-					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
-				</div>
-			</div>
-		</div>
-
-		<div class="form-group tab" name="datosLaborales">  <!-- DATOS LABORALES  -->
-			<div class="form-group">  <!-- Calle trabajo  -->
-				<label for="txtCalleL">Calle</label>
-				<div class="input-group mb-3">
-					<input type="text" class="form-control" id="txtCalleL" placeholder="Ingrese su calle" name="calle" data-info="Completa la información de este campo para continuar">
-					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="txtAlturaL">Altura</label>  <!-- Altura de calle trabajo -->
-				<div class="input-group mb-3">
-					<input type="text" class="form-control" id="txtAlturaL" placeholder="Ingrese altura del domicilio" name="altura" data-info="Completa la información de este campo para continuar">
-					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
-				</div>
-			</div>
-		</div>
-
-		<div class="form-group tab" name="motivoSolicitud">
-			<div class="form-group">
-				<label for="txtMotivo">Motivo</label>
-				<div class="input-group mb-3">
-					<input type="text" class="form-control" id="txtMotivo" placeholder="Ingrese el motivo de la solicitud" name="motivo" data-info="Completa la información de este campo para continuar">
-					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="" id="chkTerms">
-					<label class="form-check-label" for="chkTerms">
-					  Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
-					</label>
-				</div>
-			</div>
-			
-		</div>
-	
-		
-		<div style="overflow:auto;">
-			<div style="float:right;">
-			<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-			<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-		</div>
-		
-		<!-- Circles which indicates the steps of the form: -->
-		<div style="text-align:center;margin-top:40px;">
-		<span class="step"></span>
-		<span class="step"></span>
-		<span class="step"></span>
-		<span class="step"></span>
-		</div>
-	
-      	
-
-	 
-		  <div class="form-group" hidden>
-		    <label for="cmbProvincia">Provincia </label>
-		    <select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
-	    		<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+			<div class="form-group" hidden>
+			<label for="cmbProvincia">Provincia </label>
+			<select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
+				<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
 				<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
 				<option value="buenos-aires">Buenos Aires</option>
 				<option value="santa-fe">Santa Fe</option>
 				<option value="la-pampa">La Pampa</option>
 				<option value="mendoza">Mendoza</option>
-		    </select>
-		  </div>
+			</select>
+			</div>
 
-		  <div class="form-group" style="display:none;" hidden>
-		    <label for="cmbLocalidad">Localidad</label>
-		    <select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
+			<div class="form-group" style="display:none;" hidden>
+			<label for="cmbLocalidad">Localidad</label>
+			<select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
 				<option value="retiro">Retiro</option>
 				<option value="nunez">Nuñez</option>
 				<option value="villa-del-parque">Villa del Parque</option>
 				<option value="monte-castro">Monte Castro</option>
 				<option value="caballito">Caballito</option>
-		    </select>
-		  </div>
+			</select>
+			</div>
 
 
 			<div class="form-check" hidden>
-			  <input class="form-check-input" type="checkbox" value="" id="chkTerms">
-			  <label class="form-check-label" for="chkTerms">
-			    Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
-			  </label>
+				<input class="form-check-input" type="checkbox" value="" id="chkTerms">
+				<label class="form-check-label" for="chkTerms">
+				Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
+				</label>
 			</div>
 
-		  <button type="submit" class="btn btn-primary mt-3" hidden>Enviar Registro</button>
+			<button type="submit" class="btn btn-primary mt-3" hidden>Enviar Registro</button>
 		</form>
     </div>
     <div class="col bg-dark text-light" hidden>
