@@ -14,26 +14,31 @@ $(document).ready(function () {
 });
 
 function checkPronvincia() {
-	var object = event.target;
-
-	console.log(event.target.value);
-
+	var laboral = document.getElementById('cmbLocalidadL');
+	var domicilio = document.getElementById('cmbLocalidad');
+	/*console.log(event.target.value);
 	$.get("json/buenos-aires.json", function (data) {
 		console.log("Martin");
 	});
-
 	//console.log($(event.target).children(":first").data('ort'));
-
-	if (event.target.value == "ciudad") {
-		$("#cmbLocalidad").parent().show('slow');
+	*/
+	if (laboral.value == "ciudadL") {
+		
+		document.getElementById('cmbLocalidadL').parentNode.setAttribute('style', 'display:true');
 	} else {
-		$("#cmbLocalidad").parent().hide('slow');
-		//document.getElementById('cmbLocalidad').parentNode.setAttribute('style', 'display:none');
+		
+		document.getElementById('cmbLocalidadL').parentNode.setAttribute('style', 'display:none');
 	}
-
+	if (domicilio.value == "ciudad") {
+		document.getElementById('cmbLocalidad').parentNode.setAttribute('style', 'display:true');
+		
+	} else {
+		
+		document.getElementById('cmbLocalidad').parentNode.setAttribute('style', 'display:none');
+	}
 }
 
-function validarForm(e) {
+function validInput(e) {
 	var first = false;
 	var percent = 0;
 	var error = false;
@@ -158,29 +163,32 @@ function validateForm() {
 	y = x[currentTab].getElementsByTagName("input");
 	// A loop that checks every input field in the current tab:
 	for (i = 0; i < y.length; i++) {
-	// If a field is empty...
-	if (y[i].value == "") {
-		// add an "invalid" class to the field:
-		y[i].className += " invalid";
-		// and set the current valid status to false:
-		valid = false;
-	}
+		// If a field is empty...
+		if (y[i].value == "") {
+			// add an "invalid" class to the field:
+			y[i].className += " invalid";
+			// and set the current valid status to false:
+			valid = false;
+		}
+		else{
+			y[i].className = y[i].className.replace(" invalid", "") ;
+		}
 	}
 	// If the valid status is true, mark the step as finished and valid:
 	if (valid) {
-	document.getElementsByClassName("step")[currentTab].className += " finish";
+		document.getElementsByClassName("step")[currentTab].className += " finish";
 	}
 	return valid; // return the valid status
 }
   
-  function fixStepIndicator(n) {
-	// This function removes the "active" class of all steps...
-	var i, x = document.getElementsByClassName("step");
-	for (i = 0; i < x.length; i++) {
-	  x[i].className = x[i].className.replace(" active", "");
-	}
-	//... and adds the "active" class to the current step:
-	x[n].className += " active";
-  }
+function fixStepIndicator(n) {
+// This function removes the "active" class of all steps...
+var i, x = document.getElementsByClassName("step");
+for (i = 0; i < x.length; i++) {
+	x[i].className = x[i].className.replace(" active", "");
+}
+//... and adds the "active" class to the current step:
+x[n].className += " active";
+}
 
   //-------------------------------------- FIN VISUALIZACION TABS -------------------------------------------//
