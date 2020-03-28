@@ -115,15 +115,15 @@
 			</div>
 		</div>
 
-		<div class="form-group tab" name="datosDomicilio">
-			<div class="form-group">
+		<div class="form-group tab" name="datosDomicilio">  <!-- DATOS DE DOMICILIO  -->
+			<div class="form-group">  <!--calle domicilio-->
 				<label for="txtCalleD">Calle</label>
 				<div class="input-group mb-3">
-					<input oninput="this.className = ''" type="text" class="form-control" id="txtCalleD" placeholder="Ingrese su calle" name="calle" data-info="Completa la información de este campo para continuar">
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtCalleD" placeholder="Ingrese su calle de domicilio" name="calle" data-info="Completa la información de este campo para continuar">
 					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group"> <!--Altura domicilio   -->
 				<label for="txtAlturaD">Altura</label>
 				<div class="input-group mb-3">
 					<input oninput="this.className = ''" type="text" class="form-control" id="txtAlturaD" placeholder="Ingrese altura del domicilio" name="altura" data-info="Completa la información de este campo para continuar">
@@ -132,7 +132,7 @@
 			</div>
 
 
-			<div class="form-group">
+			<div class="form-group">  <!-- Piso dpto Domicilio-->
 				<label for="txtPiso">Piso/Dto</label>
 				<div class="input-group mb-3">
 					<input oninput="this.className = ''" type="text" class="form-control" id="txtPiso" placeholder="Ingrese el piso" name="altura" data-info="Completa la información de este campo para continuar">
@@ -141,16 +141,7 @@
 			</div>
 
 
-			<div class="form-group">
-				<label for="txtPiso">Piso/Dpto</label>
-				<div class="input-group mb-3">
-					<input oninput="this.className = ''" type="text" class="form-control" id="txtPiso" placeholder="Ingrese Pisoo/Dpto" name="piso/dpto" data-info="Completa la información de este campo para continuar">
-					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
-				</div>
-			</div>
-
-
-			<div class="form-group">
+			<div class="form-group">  <!--Provincia Domicilio -->
 				<label for="cmbProvincia">Provincia </label>
 				<select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
 					<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
@@ -162,7 +153,7 @@
 				</select>
 			  </div>
 	
-			  <div class="form-group" style="display:none;">
+			  <div class="form-group" style="display:none;">  <!--Loocalidad Domicilio-->
 				<label for="cmbLocalidad">Localidad</label>
 				<select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
 					<option value="retiro">Retiro</option>
@@ -177,32 +168,43 @@
 		</div>
 
 
-		<div class="form-group tab" name="datosContacto">
-			<div class="form-group">
+		<div class="form-group tab" name="datosContacto">  <!-- DATOS DE CONTACTO  -->
+			<div class="form-group">  <!-- celular Contacto  -->
 				<label for="txtCelular">Celular</label>
 				<div class="input-group mb-3">
+					<span class="input-group-text" id="basic-addon1">
+						<i class="fas fa-mobile-alt"></i></i>
+					</span>
 					<input oninput="this.className = ''" type="text" class="form-control" id="txtCelular" placeholder="Ingrese su telefono celular" name="celular" data-info="Completa la información de este campo para continuar">
-					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					
 				</div>
+
+
 			</div>
-			<div class="form-group">
+			<div class="form-group">  <!--  Email Contacto-->
 				<label for="txtEmail">Correo electronico</label>
 				<div class="input-group mb-3">
-					<input oninput="this.className = ''" type="text" class="form-control" id="txtEmail" placeholder="Ingrese su email" name="email" data-info="Completa la información de este campo para continuar">
-					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					<span class="input-group-text" id="basic-addon1">
+						<i class="far fa-envelope"></i>
+					</span>
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtEmail" placeholder="Ingrese su email de contacto" name="email" data-info="Completa la información de este campo para continuar">
+					
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group">  <!--  Cuenta Github -->
 				<label for="txtGithub">Cuenta de Github</label>
 				<div class="input-group mb-3">
+					<span class="input-group-text" id="basic-addon1">
+						<i class="fab fa-github"></i>
+					</span>
 					<input oninput="this.className = ''" type="text" class="form-control" id="txtGithub" placeholder="Ingrese su cuenta de github" name="altura" data-info="Completa la información de este campo para continuar">
 					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
 				</div>
 			</div>
 		</div>
 
-		<div class="form-group tab" name="datosLaborales">
-			<div class="form-group">
+		<div class="form-group tab" name="datosLaborales">  <!-- DATOS LABORALES  -->
+			<div class="form-group">  <!-- Calle trabajo  -->
 				<label for="txtCalleL">Calle</label>
 				<div class="input-group mb-3">
 					<input oninput="this.className = ''" type="text" class="form-control" id="txtCalleL" placeholder="Ingrese su calle" name="calle" data-info="Completa la información de este campo para continuar">
@@ -210,7 +212,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="txtAlturaL">Altura</label>
+				<label for="txtAlturaL">Altura</label>  <!-- Altura de calle trabajo -->
 				<div class="input-group mb-3">
 					<input oninput="this.className = ''" type="text" class="form-control" id="txtAlturaL" placeholder="Ingrese altura del domicilio" name="altura" data-info="Completa la información de este campo para continuar">
 					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
