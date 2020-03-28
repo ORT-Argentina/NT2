@@ -183,18 +183,65 @@
 
 		<div class="form-group tab" name="datosLaborales">
 			<div class="form-group">
-				<label for="txtCalleL">Calle</label>
+				<label for="txtLugarTrabajo">Lugar de Trabajo</label>
 				<div class="input-group mb-3">
-					<input oninput="this.className = ''" type="text" class="form-control" id="txtCalleL" placeholder="Ingrese su calle" name="calle" data-info="Completa la información de este campo para continuar">
+					<input oninput="this.className = ''" type="text" class="form-control" id="txtLugarTrabajo" placeholder="Ingrese el nombre de su empresa" name="lugarTrabajo" data-info="Completa la información de este campo para continuar">
 					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
 				</div>
 			</div>
+			<div class="form-group">
+					<label for="txtCalleL">Calle</label>
+					<div class="input-group mb-3">
+						<input oninput="this.className = ''" type="text" class="form-control" id="txtCalleL" placeholder="Ingrese la calle" name="calleL" data-info="Completa la información de este campo para continuar">
+						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					</div>
 			<div class="form-group">
 				<label for="txtAlturaL">Altura</label>
 				<div class="input-group mb-3">
 					<input oninput="this.className = ''" type="text" class="form-control" id="txtAlturaL" placeholder="Ingrese altura del domicilio" name="altura" data-info="Completa la información de este campo para continuar">
 					<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
 				</div>
+			</div>
+			<div class="form-group">
+					<label for="txtPisoL">Piso/Dpto</label>
+					<div class="input-group mb-3">
+						<input oninput="this.className = ''" type="text" class="form-control" id="txtPisoL" placeholder="Ingrese Piso/Dpto de oficina" name="piso/dptoL" data-info="Completa la información de este campo para continuar">
+						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					</div>
+			</div>
+			<div class="form-group">
+					<label for="cmbProvinciaL">Provincia </label>
+					<select class="form-control" id="cmbProvinciaL" onchange="checkPronvincia(event, this)">
+						<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+						<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+						<option value="buenos-aires">Buenos Aires</option>
+						<option value="santa-fe">Santa Fe</option>
+						<option value="la-pampa">La Pampa</option>
+						<option value="mendoza">Mendoza</option>
+					</select>
+			</div>
+			<div class="form-group" style="display:none;">
+					<label for="cmbLocalidadL">Localidad</label>
+					<select class="form-controlL" id="cmbLocalidadL" name="cmbLocalidadL">
+						<option value="retiro">Retiro</option>
+						<option value="nunez">Nuñez</option>
+						<option value="villa-del-parque">Villa del Parque</option>
+						<option value="monte-castro">Monte Castro</option>
+						<option value="caballito">Caballito</option>
+					</select>
+			</div>
+
+			<div class="form-group">
+					<label for="txtTelefonoL">Telefono</label>
+					<div class="input-group mb-3">
+						<input oninput="this.className = ''" type="text" class="form-control" id="txtTelefonoL" placeholder="Ingrese su telefono" name="telefonoL" data-info="Completa la información de este campo para continuar">
+						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					</div>
+			</div>
+
+			<div>
+				<label for="profeSalud">¿Es Profesional de Salud?</label>
+				<input class="form-check-input" type="checkbox" value="" id="chkPSalud">
 			</div>
 		</div>
 
