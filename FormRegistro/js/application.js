@@ -16,25 +16,16 @@ $(document).ready(function () {
 function checkPronvincia() {
 	var laboral = document.getElementById('cmbLocalidadL');
 	var domicilio = document.getElementById('cmbLocalidad');
-	/*console.log(event.target.value);
+	console.log(event.target.value);
 	$.get("json/buenos-aires.json", function (data) {
 		console.log("Martin");
 	});
 	//console.log($(event.target).children(":first").data('ort'));
-	*/
-	if (laboral.value == "ciudadL") {
-		
-		document.getElementById('cmbLocalidadL').parentNode.setAttribute('style', 'display:true');
-	} else {
-		
-		document.getElementById('cmbLocalidadL').parentNode.setAttribute('style', 'display:none');
-	}
-	if (domicilio.value == "ciudad") {
-		document.getElementById('cmbLocalidad').parentNode.setAttribute('style', 'display:true');
-		
-	} else {
-		
-		document.getElementById('cmbLocalidad').parentNode.setAttribute('style', 'display:none');
+	
+	if (laboral.value == "ciudad") {
+		$("#cmbLocalidad").parents().show('slow');
+	}else {
+		$("#cmbLocalidad").parents().hide('slow');
 	}
 }
 
