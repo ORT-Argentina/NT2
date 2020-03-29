@@ -13,29 +13,23 @@ $(document).ready(function () {
 
 });
 
-function checkPronvincia() {
-	var laboral = document.getElementById('cmbLocalidadL');
-	var domicilio = document.getElementById('cmbLocalidad');
-	/*console.log(event.target.value);
-	$.get("json/buenos-aires.json", function (data) {
-		console.log("Martin");
-	});
-	//console.log($(event.target).children(":first").data('ort'));
-	*/
-	if (laboral.value == "ciudadL") {
-		
-		document.getElementById('cmbLocalidadL').parentNode.setAttribute('style', 'display:true');
-	} else {
-		
-		document.getElementById('cmbLocalidadL').parentNode.setAttribute('style', 'display:none');
-	}
-	if (domicilio.value == "ciudad") {
-		document.getElementById('cmbLocalidad').parentNode.setAttribute('style', 'display:true');
-		
-	} else {
-		
-		document.getElementById('cmbLocalidad').parentNode.setAttribute('style', 'display:none');
-	}
+function checkPronvincia(id) {
+	var domicilioPersonal = document.getElementById("cmbProvincia");
+	var domicilioLaboral = document.getElementById("cmbProvinciaL");
+	var divDomicilio = document.getElementById("divLocalidad");
+	var divLaboral = document.getElementById("divLocalidadL");
+
+	if(domicilioPersonal.id == id){
+		divDomicilio.style.display = "none";
+		if(domicilioPersonal.value=="ciudad"){
+			divDomicilio.style.display = "block";
+		}
+	}else{
+		divLaboral.style.display = "none";
+		if(domicilioLaboral.value=="ciudad"){
+			divLaboral.style.display = "block";
+		}
+	}	
 }
 
 function validInput(e) {

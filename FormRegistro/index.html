@@ -118,7 +118,7 @@
 			<div class="form-group tab" name="datosDomicilio">  <!-- DATOS DE DOMICILIO  -->
 				<div class="form-group">  <!--Provincia Domicilio -->
 					<label for="cmbProvincia">Provincia </label>
-					<select class="form-control" id="cmbProvincia" onchange="checkPronvincia()">
+					<select class="form-control" id="cmbProvincia" onchange="checkPronvincia(this.id)">
 						<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
 						<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
 						<option value="buenos-aires">Buenos Aires</option>
@@ -128,7 +128,7 @@
 					</select>
 				</div>
 		
-				<div class="form-group" style="display:none;">  <!--Loocalidad Domicilio-->
+				<div id="divLocalidad" class="form-group" style="display:none;">  <!--Loocalidad Domicilio-->
 					<label for="cmbLocalidad">Localidad</label>
 					<select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
 						<option value="retiro">Retiro</option>
@@ -230,9 +230,9 @@
 				<div class="row"><!--PROVINCIA/LOCALIDAD-->
 					<div class="form-group col-sm-6 col-lg-6"><!--PROVINCIA-->
 						<label for="cmbProvinciaL">Provincia </label>
-						<select class="form-control" id="cmbProvinciaL" onchange="checkPronvincia()">
+						<select class="form-control" id="cmbProvinciaL" onchange="checkPronvincia(this.id)">
 							<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
-							<option value="ciudadL" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+							<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
 							<option value="buenos-aires">Buenos Aires</option>
 							<option value="santa-fe">Santa Fe</option>
 							<option value="la-pampa">La Pampa</option>
@@ -240,7 +240,7 @@
 						</select>
 					</div>
 
-					<div class="form-group col-sm-6 col-lg-6" style="display:none;"><!--LOCALIDAD-->
+					<div id="divLocalidadL" class="form-group col-sm-6 col-lg-6" style="display:none;"><!--LOCALIDAD-->
 						<label for="cmbLocalidadL">Localidad</label>
 						<select class="form-control" id="cmbLocalidadL" name="cmbLocalidadL">
 							<option value="retiro">Retiro</option>
