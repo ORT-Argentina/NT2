@@ -18,16 +18,22 @@ function checkPronvincia(id) {
 	var domicilioLaboral = document.getElementById("cmbProvinciaL");
 	var divDomicilio = document.getElementById("divLocalidad");
 	var divLaboral = document.getElementById("divLocalidadL");
+	var divContenedorProvinciaD = document.getElementById("contenedorProvinciaD");
+	var divContenedorProvinciaL = document.getElementById("contenedorProvinciaL");
 
 	if(domicilioPersonal.id == id){
 		divDomicilio.style.display = "none";
+		divContenedorProvinciaD.className = divContenedorProvinciaD.className.replace(" col-sm-6 col-lg-6", " col-sm-12 col-lg-12") ;
 		if(domicilioPersonal.value=="ciudad"){
 			divDomicilio.style.display = "block";
+			divContenedorProvinciaD.className = divContenedorProvinciaD.className.replace(" col-sm-12 col-lg-12", " col-sm-6 col-lg-6") ;
 		}
 	}else{
 		divLaboral.style.display = "none";
+		divContenedorProvinciaL.className = divContenedorProvinciaL.className.replace(" col-sm-6 col-lg-6", " col-sm-12 col-lg-12") ;
 		if(domicilioLaboral.value=="ciudad"){
 			divLaboral.style.display = "block";
+			divContenedorProvinciaL.className = divContenedorProvinciaL.className.replace(" col-sm-12 col-lg-12", " col-sm-6 col-lg-6") ;
 		}
 	}	
 }

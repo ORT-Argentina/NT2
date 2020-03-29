@@ -116,35 +116,37 @@
 			</div>
 
 			<div class="form-group tab" name="datosDomicilio">  <!-- DATOS DE DOMICILIO  -->
-				<div class="form-group">  <!--Provincia Domicilio -->
-					<label for="cmbProvincia">Provincia </label>
-					<select class="form-control" id="cmbProvincia" onchange="checkPronvincia(this.id)">
-						<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
-						<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
-						<option value="buenos-aires">Buenos Aires</option>
-						<option value="santa-fe">Santa Fe</option>
-						<option value="la-pampa">La Pampa</option>
-						<option value="mendoza">Mendoza</option>
-					</select>
+				<div class="row"><!--DIRECCION-->
+					<div id="contenedorProvinciaD" class="form-group col-sm-12 col-lg-12">  <!--Provincia Domicilio -->
+						<label for="cmbProvincia">Provincia </label>
+						<select class="form-control" id="cmbProvincia" onchange="checkPronvincia(this.id)">
+							<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+							<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+							<option value="buenos-aires">Buenos Aires</option>
+							<option value="santa-fe">Santa Fe</option>
+							<option value="la-pampa">La Pampa</option>
+							<option value="mendoza">Mendoza</option>
+						</select>
+					</div>
+			
+					<div id="divLocalidad" class="form-group col-sm-6 col-lg-6" style="display:none;">  <!--Loocalidad Domicilio-->
+						<label for="cmbLocalidad">Localidad</label>
+						<select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
+							<option value="retiro">Retiro</option>
+							<option value="nunez">Nuñez</option>
+							<option value="villa-del-parque">Villa del Parque</option>
+							<option value="monte-castro">Monte Castro</option>
+							<option value="caballito">Caballito</option>
+						</select>
+					</div>			
 				</div>
-		
-				<div id="divLocalidad" class="form-group" style="display:none;">  <!--Loocalidad Domicilio-->
-					<label for="cmbLocalidad">Localidad</label>
-					<select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
-						<option value="retiro">Retiro</option>
-						<option value="nunez">Nuñez</option>
-						<option value="villa-del-parque">Villa del Parque</option>
-						<option value="monte-castro">Monte Castro</option>
-						<option value="caballito">Caballito</option>
-					</select>
-				</div>			
 			
 				<div class="row"><!--Direccion-->
 					<div class="form-group col-sm-6 col-lg-6">  <!--calle domicilio-->
 						<label for="txtCalleD">Calle</label>
 						<div class="input-group mb-3">
 							<span class="input-group-text" id="basic-addon1">
-								<i class="fas fa-home"></i>
+								<i class="iconsColor fas fa-home"></i>
 							</span>
 							<input type="text" class="form-control" id="txtCalleD" placeholder="Ingrese calle de domicilio" name="calle" data-info="Completa la información de este campo para continuar">					</div>
 					</div>
@@ -169,7 +171,7 @@
 					<label for="txtCelular">Celular</label>
 					<div class="input-group mb-3">
 						<span class="input-group-text" id="basic-addon1">
-							<i class="fas fa-mobile-alt"></i>
+							<i class="iconsColor fas fa-mobile-alt"></i>
 						</span>
 						<input type="text" class="form-control" id="txtCelular" placeholder="Ingrese su telefono celular" name="celular" data-info="Completa la información de este campo para continuar">
 					</div>
@@ -178,7 +180,7 @@
 					<label for="txtEmail">Correo electronico</label>
 					<div class="input-group mb-3">
 						<span class="input-group-text" id="basic-addon1">
-							<i class="far fa-envelope"></i>
+							<i class="iconsColor far fa-envelope"></i>
 						</span>
 						<input type="text" class="form-control" id="txtEmail" placeholder="Ingrese su email de contacto" name="email" data-info="Completa la información de este campo para continuar">
 						
@@ -188,7 +190,7 @@
 					<label for="txtGithub">Cuenta de Github</label>
 					<div class="input-group mb-3">
 						<span class="input-group-text" id="basic-addon1">
-							<i class="fab fa-github"></i>
+							<i class="iconsColor fab fa-github"></i>
 						</span>
 						<input type="text" class="form-control" id="txtGithub" placeholder="Ingrese su cuenta de github" name="altura" data-info="Completa la información de este campo para continuar">
 						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
@@ -208,6 +210,9 @@
 					<div class="form-group col-sm-6 col-lg-6">  <!-- Calle trabajo  -->
 						<label for="txtCalleL">Calle</label>
 						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="iconsColor fas fa-home"></i>
+							</span>
 							<input type="text" class="form-control" id="txtCalleL" placeholder="Ingrese su calle" name="calle" data-info="Completa la información de este campo para continuar">
 						</div>
 					</div>
@@ -228,7 +233,7 @@
 				</div>
 				
 				<div class="row"><!--PROVINCIA/LOCALIDAD-->
-					<div class="form-group col-sm-6 col-lg-6"><!--PROVINCIA-->
+					<div id="contenedorProvinciaL" class="form-group col-sm-12 col-lg-12"><!--PROVINCIA-->
 						<label for="cmbProvinciaL">Provincia </label>
 						<select class="form-control" id="cmbProvinciaL" onchange="checkPronvincia(this.id)">
 							<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
