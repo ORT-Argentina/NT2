@@ -1,7 +1,14 @@
 /*.form-control{
 	border-color: red;
 }*/
-
+/* DGN */
+hr { 
+  display: block;
+  border-width: 10px;
+  color:#e9ecef;
+  margin-left:-10;
+} 
+/* DGN */
 @-webkit-keyframes display-none-transition {
   0% {
     opacity: 0;
