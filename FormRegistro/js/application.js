@@ -33,6 +33,7 @@ function checkPronvincia() {
 
 }
 
+
 function validarForm(e) {
 	var first = false;
 	var percent = 0;
