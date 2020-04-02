@@ -12,151 +12,651 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-  <a class="navbar-brand text-white" href="#">Formulario de Registro</a>
+  <a class="navbar-brand text-white" href="#">Solicitud de Permiso de Tránsito</a>
 </nav>
 <div class="progress">
 	<div class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 <div class="container mt-3">
-  <div class="row">
-    <div class="col-8">
-      <form name="registro" onsubmit="return validarForm(event);">
+<div class="row">	
+  <div class="col-8">	
+	<div class="row" id="paso1">
+		<div class="col-12">
+			<form name="registro" onsubmit="validarFormPaso1()">
+				<h5>
+					<strong>Datos Personales</strong>
+				</h5>
+				<!--nombre y apellido //validar-->
+				<div class="row">			 
+					<div class="col-6">
+					<div class="form-group">
+						<label for="nom">Nombre</label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-address-book text-primary"></i>
+								</span>
+							</div>
+							<input type="text" value="" class="form-control" id="nom" placeholder="Ingrese su nombre" name="nombre" data-info="Completa la información de este campo para continuar">
+							<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+						</div>
+					</div>
+					</div>
+					<div class="col-6">
+					<div class="form-group">
+						<label for="ape">Apellido</label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-address-book text-primary"></i>
+								</span>
+							</div>
+							<input type="text" value="" class="form-control" id="ape" placeholder="Ingreso su Apellido" data-info="Completa la información de este campo para continuar">
+						</div>
+					</div>
+					</div>
+				</div>
+				<!--tipo y numero de documento //validar-->
+				<div class="row">			
+					<div class="col-6">
+						<div class="form-group">
+							<label for="cmbTipoDni">Tipo de Documento</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">
+										<i class="fas fa-id-card text-primary"></i>
+									</span>
+								</div>
+								<select class="form-control" id="cmbTipoDni" required>
+									<option value="">Seleccionar</option>
+									<option value="dni">DNI</option>
+									<option value="le">LE </option>
+									<option value="pasaporte">Pasaporte</option>
+									<option value="docext">Documento Extranjero </option>
+								</select>
+							</div>
 
-      	<div class="row">
-    		<div class="col-6">
-			  <div class="form-group">
-			    <label for="txtNombre">Nombre</label>
-			    <div class="input-group mb-3">
-			    	<div class="input-group-prepend">
-				    	<span class="input-group-text" id="basic-addon1">
-				    		<i class="fas fa-address-book text-primary"></i>
-				    	</span>
-				  	</div>
-			    	<input type="text" class="form-control" id="txtNombre" placeholder="Ingrese su nombre" name="nombre" data-info="Completa la información de este campo para continuar">
-			    	<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
-			    </div>
-			  </div>
-			</div>
-			<div class="col-6">
-			  <div class="form-group">
-			    <label for="txtApellido">Apellido</label>
-			    <div class="input-group mb-3">
-			    	<div class="input-group-prepend">
-				    	<span class="input-group-text" id="basic-addon1">
-				    		<i class="fas fa-address-book text-primary"></i>
-				    	</span>
-				  	</div>
-			    	<input type="text" class="form-control" id="txtApellido" placeholder="Ingreso su Apellido" data-info="Completa la información de este campo para continuar">
-			    </div>
-			  </div>
-			</div>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="form-group">
+							<label for="dni">Número de Documento </label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">
+										<i class="fas fa-id-card text-primary"></i>
+									</span>
+								</div>
+								<input type="text" value="" class="form-control" id="dni" placeholder="Ingrese su DNI" data-info="Completa la información de este campo para continuar">
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--numero de trámite y nacionalidad //validar-->
+				<div class="row">		
+					<div class="col-6">
+						<div class="form-group">
+							<label for="ntte">Número de Trámite DNI</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">
+										<i class="fas fa-id-card text-primary"></i>
+									</span>
+								</div>
+								<input type="text" value="" class="form-control" id="ntte" placeholder="Ingrese el número de trámite DNI" data-info="Completa la información de este campo para continuar">
+							</div>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="form-group">
+							<label for="nac">Nacionalidad</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">
+										<i class="fas fa-flag text-primary"></i>
+									</span>
+								</div>	
+								<select class="form-control" id="cmbNac" required>
+									<option value="">Seleccionar</option>
+									<option value="arg">Argentina</option>
+									<option value="bra">Brasil</option>
+									<option value="par">Paraguay</option>
+									<option value="chi">Chile</option>
+									<option value="uru">Uruguay</option>
+									<option value="bol">Bolivia</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Género y fecha de nacimiento //validar-->
+				<div class="row">
+					<div class="col-6">
+						<div class="form-group">
+							<label for="gen">Gérero</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text">
+										<i class="fas fa-venus-mars text-primary"></i>
+									</span>
+								</div>
+								<select class="form-control" id="cmbGen" required>
+									<option value="">Seleccionar</option>
+									<option value="fem">Femenino</option>
+									<option value="masc">Masculino</option>
+								</select>	
+							</div>	
+						</div>  
+					</div>
+					<div class="col-6">
+						<div class="form-group">
+							<label for="fecNac">Fecha de Nacimiento</label>
+							<div class="input-group mb3">
+								<div class="input-group-prepend">
+									<span class="input-group-text">
+										<i class="fas fa-birthday-cake text-primary"></i>
+									</span>
+								</div>
+								<input type="date" class="form-control" id="fecNac" placeholder="Ingrese fecha de nacimiento" name="fecNac" data-info="Completa la información de este campo para continuar" required>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- botones -->
+				<div class="form-check">
+					<button type="button" class="btn btn-primary mt-3" onclick="validarFormPaso1();">Siguiente</button>
+				</div>	
+			</form>
+		</div>	  
+	</div>		
+	
+<!------------------------------------------ PASO 2 ------------------------------------------------->
+	<br>
+
+	<div class="row" id="paso2" style="display: none;">
+		<div class="col-12"> <hr>
+			<form name="registro" onsubmit="return validarFormPaso2(event);">
+				<h5>
+					<strong>Domicilio</strong>
+				</h5>
+				<!--calle, altura y depto //validar-->
+				<div class="row">			 
+					<div class="col-4">
+					<div class="form-group">
+						<label for="txtCalle">Calle</label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-road text-primary"></i>
+								</span>
+							</div>
+							<input type="text" value=" " class="form-control" id="txtCalle" placeholder="Ingrese la calle" name="calle" data-info="Completa la información de este campo para continuar" required>
+						</div>
+					</div>
+					</div>
+					<div class="col-4">
+					<div class="form-group">
+						<label for="txtAltura">Altura </label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-building text-primary"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control" id="txtAltura" placeholder="Ingrese la altura" data-info="Completa la información de este campo para continuar" required>
+						</div>
+					</div>
+					</div>
+					<div class="col-4">
+					<div class="form-group">
+						<label for="txtDto">Departamento </label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-door-open text-primary"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control" id="txtDto" placeholder="Ingrese número o letra de departamento">
+						</div>
+					</div>
+					</div>
+				</div>
+				<!--provincia y localidad //validar-->
+				<div class="row">			
+					<div class="col-6">
+						<div class="form-group">
+							<label for="cmbProv">Provincia</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">
+										<i class="fas fa-map text-primary"></i>
+									</span>
+								</div>
+								<select class="form-control" id="cmbProv" onchange="checkPronvincia(event, this)">
+									<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+									<option value="caba" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+									<option value="gba">Gran Buenos Aires</option>
+									<option value="otro">Otro</option>
+								</select>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-6" id="cmbLocCabaDiv" style="display:none;">
+						<div class="form-group">
+							<label for="cmbLocCaba">Localidad </label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">
+										<i class="fas fa-map text-primary"></i>
+									</span>
+								</div>
+								<select class="form-control" id="cmbLocCaba" name="cmbLocCaba">
+									<option value="retiro">Retiro</option>
+									<option value="nunez">Nuñez</option>
+									<option value="villa-del-parque">Villa del Parque</option>
+									<option value="monte-castro">Monte Castro</option>
+									<option value="caballito">Caballito</option>
+								</select>				
+							</div>
+						</div>
+					</div>
+					<div class="col-6"  id="cmbLocGbaDiv" style="display:none;">
+						<div class="form-group">
+							<label for="cmbLocCaba">Localidad </label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">
+										<i class="fas fa-map text-primary"></i>
+									</span>
+								</div>
+								<select class="form-control" id="cmbLocGba" name="cmbLocGba">
+									<option value="san isidro">San Isidro</option>
+									<option value="vicente lopez">Vicente López</option>
+									<option value="la matanza">La Matanza</option>
+									<option value="avellaneda">Avellaneda</option>
+									<option value="san martin">San Martín</option>
+								</select>				
+							</div>
+						</div>
+					</div>
+					<div class="col-6" id="txtLocOtroDiv" style="display: none;">
+						<div class="form-group">
+						<label for="txtLocOtro">Localidad</label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-address-book text-primary"></i>
+								</span>
+								</div>
+							<input type="text" class="form-control" id="txtLocOtro" placeholder="Ingrese la localidad" name="locOtro">
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-check" class="col-1">
+						<button type="submit" class="btn btn-primary mt-3" id="volver a paso 1">Atrás</button>
+					</div>
+					<div class="form-check" class="col-1">
+						<button type="submit" class="btn btn-primary mt-3" id="ir a paso 3">Siguiente</button>
+					</div>
+				</div>	
+			</form>	
+		</div>	
+	</div>
+<!------------------------------------------ PASO 3 ------------------------------------------------->
+
+	<br>
+
+	<div class="row" id="paso3" style="display: none;">
+		<div class="col-12"> <hr>
+			<form name="registro" onsubmit="return validarFormPaso3(event)">
+				<h5>
+					<strong>Datos de Contacto</strong>
+				</h5>
+				<!--Teléfono, mail y git-->
+				<div class="row">
+					<div class="col-4">
+						<div class="form-group">
+							<label for="txtphone">Teléfono</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">
+										<i class="fas fa-phone text-primary"></i>
+									</span>
+								  </div>
+								<input type="text" class="form-control" id="txtphone" placeholder="Número de teléfono" required>
+							</div>
+						</div>
+					</div>	
+					<div class="col-4">
+						<div class="form-group">
+							<label for="txtEmail">E-Mail </label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">
+										<i class="fas fa-mail-bulk text-primary"></i>
+									</span>
+								  </div>
+								<input type="email" class="form-control" id="txtEmail" placeholder="Correo Electrónico">
+							</div>
+						  </div>
+					</div>
+					<div class="col-4">
+						<div class="form-group">
+							<label for="git">Cuenta de GitHub</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon1">
+											<i class="fas fa-at text-primary"></i>
+										</span>
+									</div>
+									<input type="text" id="git" class="form-control" placeholder="cuenta de git">
+								</div>
+						</div>
+					</div>
+				</div>
+				<!-- botones-->	
+				<div class="row">
+					<div class="form-check" class="col-1">
+						<button type="submit" class="btn btn-primary mt-3" id="volver a paso 2">Atrás</button>
+					</div>
+					<div class="form-check" class="col-1">
+						<button type="submit" class="btn btn-primary mt-3" id="ir a paso 4">Siguiente</button>
+					</div>
+				</div>
+			</form>
 		</div>
+	</div>
 
-	  <div class="form-group">
-	    <label for="txtDni">DNI </label>
-	    <div class="input-group mb-3">
-	    	<div class="input-group-prepend">
-		    	<span class="input-group-text" id="basic-addon1">
-		    		<i class="fas fa-id-card text-primary"></i>
-		    	</span>
-		  	</div>
-	    	<input type="text" class="form-control" id="txtDni" placeholder="Ingreso su DNI" data-info="Completa la información de este campo para continuar">
-	    </div>
-	  </div>
+<!------------------------------------------ PASO 4 -------------------------------------------------->
 		  
-		  <div class="form-group">
-		    <label for="cmbProvincia">Provincia </label>
-		    <select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
-	    		<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
-				<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
-				<option value="buenos-aires">Buenos Aires</option>
-				<option value="santa-fe">Santa Fe</option>
-				<option value="la-pampa">La Pampa</option>
-				<option value="mendoza">Mendoza</option>
-		    </select>
-		  </div>
+<br>
 
-		  <div class="form-group" style="display:none;">
-		    <label for="cmbLocalidad">Localidad</label>
-		    <select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
-				<option value="retiro">Retiro</option>
-				<option value="nunez">Nuñez</option>
-				<option value="villa-del-parque">Villa del Parque</option>
-				<option value="monte-castro">Monte Castro</option>
-				<option value="caballito">Caballito</option>
-		    </select>
-		  </div>
-
-		  <div class="form-group">
-		    <label for="txtEmail">E-Mail </label>
-		    <div class="input-group mb-3">
-		    	<div class="input-group-prepend">
-
-			    	<span class="input-group-text" id="basic-addon1">
-			    		<i class="fas fa-at text-primary"></i>
-			    	</span>
-			  	</div>
-		    	<input type="email" class="form-control" id="txtEmail" placeholder="Ingreso su Correo Electronico">
-		    </div>
-		  </div>
-
-			<div class="form-group">
-			    <label for="txtEmail">Teléfono</label>
-			    <div class="input-group mb-3">
-			    	<div class="input-group-prepend">
-				    	<span class="input-group-text" id="basic-addon1">
-				    		<i class="fas fa-phone text-primary"></i>
-				    	</span>
-				  	</div>
-			    	<input type="text" class="form-control" id="txtphone" placeholder="Número de teléfono">
-			    </div>
-			  </div>
-
-			<div class="form-check">
-			  <input class="form-check-input" type="checkbox" value="" id="chkTerms">
-			  <label class="form-check-label" for="chkTerms">
-			    Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
-			  </label>
+<div class="row" id="paso4" style="display: none;">
+	<div class="col-12"> <hr>
+		<form name="registro" onsubmit="return validarFormPaso4(event);">
+			<h5>
+				<strong>Datos Laborales</strong>
+			</h5>
+			<!--calle, altura y depto //validar-->
+			<div class="row">			 
+				<div class="col-4">
+				<div class="form-group">
+					<label for="txtCalleLab">Calle</label>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="fas fa-road text-primary"></i>
+							</span>
+						</div>
+						<input type="text" class="form-control" id="txtCalleLab" placeholder="Ingrese la calle" name="calle" data-info="Completa la información de este campo para continuar" required>
+					</div>
+				</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label for="txtAlturaLab">Altura </label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-building text-primary"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control" id="txtAlturaLab" placeholder="Ingrese la altura" data-info="Completa la información de este campo para continuar" required>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label for="txtDtoLab">Departamento </label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-door-open text-primary"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control" id="txtDtoLab" placeholder="Ingrese número o letra de departamento">
+						</div>
+					</div>
+				</div>
 			</div>
 
-		  <button type="submit" class="btn btn-primary mt-3">Enviar Registro</button>
-		</form>
-    </div>
-    <div class="col bg-dark text-light">
-    	<div class="text-warning">
-    		<p id="helpInfo">Informaci&oacute;n adicional</p>
-    	</div>
-    </div>
-  </div>
-  <div class="mt-3"></div>
-  <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Terminos y condiciones</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        El usuario (en adelante el “Usuario y/o Ciudadano”) entiende que el acceso y uso de tales Activos Digitales resultará en la aceptación de los presentes Términos y Condiciones. Asimismo, el Usuario entiende que acepta la Política de Privacidad, anexo a los presentes Términos y Condiciones.
+			<!--provincia y localidad //validar-->
+			<div class="row">			
+				<div class="col-6">
+					<div class="form-group">
+						<label for="cmbProv_lab">Provincia</label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-map text-primary"></i>
+								</span>
+							</div>
+							<select class="form-control" id="cmbProv_lab" onchange="checkPronvinciaLab(event, this)">
+								<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+								<option value="caba" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+								<option value="gba">Gran Buenos Aires</option>
+								<option value="otro">Otro</option>
+							</select>
+						</div>
 
-		Capacidad para aceptar estos Términos y Condiciones
-		Usted afirma ser mayor de 18 años, menor emancipado o que posee permiso legal de sus padres y/o tutor y que está completamente habilitado y es competente para entender y aceptar sin reservas las obligaciones, afirmaciones, representaciones y garantías establecidas en estos Términos y Condiciones.
-
-				Los Activos Digitales utilizan información provista directamente por los Usuarios, información suministrada por terceros e información cedida a la Subsecretaría de Gobierno Digital por otros Organismos en los términos de lo dispuesto por la Ley de Protección de Datos Personales, Nº Ley 25.326. En este último caso, la Subsecretaría de Gobierno Digital no es responsable por daños y/o perjuicios que pudieran generarse por errores en la información cedida por dichos Organismos.
-
-		Derecho Aplicable y Jurisdicción
-		Los presentes Términos y Condiciones se rigen por las leyes de la República Argentina.
-		En caso de surgir cualquier controversia respecto de la interpretación o cumplimiento de los presentes, la misma será dirimida por los Tribunales en lo Contencioso Administrativo Federal con asiento en la Capital Federal.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
+					</div>
+				</div>
+				<div class="col-6" id="cmbLocCabaDiv_lab" style="display:none;">
+					<div class="form-group">
+						<label for="cmbLocCaba_lab">Localidad </label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-city text-primary"></i>
+								</span>
+							</div>
+							<select class="form-control" id="cmbLocCaba_lab" name="cmbLocCaba_lab">
+								<option value="retiro">Retiro</option>
+								<option value="nunez">Nuñez</option>
+								<option value="villa-del-parque">Villa del Parque</option>
+								<option value="monte-castro">Monte Castro</option>
+								<option value="caballito">Caballito</option>
+							</select>				
+						</div>
+					</div>
+				</div>
+				<div class="col-6"  id="cmbLocGbaDiv_lab" style="display:none;">
+					<div class="form-group">
+						<label for="cmbLocGba_lab">Localidad </label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-city text-primary"></i>
+								</span>
+							</div>
+							<select class="form-control" id="cmbLocGba_lab" name="cmbLocGba_lab">
+								<option value="san isidro">San Isidro</option>
+								<option value="vicente lopez">Vicente López</option>
+								<option value="la matanza">La Matanza</option>
+								<option value="avellaneda">Avellaneda</option>
+								<option value="san martin">San Martín</option>
+							</select>				
+						</div>
+					</div>
+				</div>
+				<div class="col-6" id="txtLocOtroDiv_lab" style="display: none;">
+					<div class="form-group">
+					<label for="txtLocOtro_lab">Localidad</label>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="fas fa-city text-primary"></i>
+							</span>
+							</div>
+						<input type="text" class="form-control" id="txtLocOtro_lab" placeholder="Ingrese la localidad" name="txtLocOtro_lab">
+					</div>
+					</div>
+				</div>
+			</div>
+			<!--Teléfono, matrícula e institución -->
+			<div class="row">
+				<div class="col-6">
+					<div class="form-group">
+						<label for="txtphone">Teléfono Laboral</label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-phone text-primary"></i>
+								</span>
+							  </div>
+							<input type="text" class="form-control" id="txtphone_lab" placeholder="Número de teléfono">
+						</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label for="mat"> Tiene Matrícula </label>
+						<select class="form-control" id="mat" onchange="checkMatricula(event, this);">
+							<option value="">Seleccionar</option>
+							<option value="si">SI</option>
+							<option value="no">NO</option>
+						</select>						
+					</div>
+				</div>
+				<div class="col-6" id="numMat" style="display: none;">
+					<div class="form-group">
+						<label for="mat">Número de Matrícula</label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-id-badge text-primary"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control" id="Mat" placeholder="Ingrese N° Matrícula">
+						</div>	
+					</div>
+				</div>
+				<div class="col-6" id="hosp" style="display: none;">
+					<div class="form-group">
+						<label for="inst">Autoridad Emisora de la Matrícula</label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="fas fa-hospital text-primary"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control" id="inst" placeholder="Autoridad Emisora de la Matrícula">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- botones -->
+			<div class="row">
+				<div class="form-check" class="col-1">
+					<button type="submit" class="btn btn-primary mt-3" id="volver a paso 2">Atrás</button>
+				</div>
+				<div class="form-check" class="col-1">
+					<button type="submit" class="btn btn-primary mt-3" id="ir a paso 5">Siguiente</button>
+				</div>
+			</div>	
+		</form>	
+	</div>	
 </div>
+		  
+		  
+
+			
+<!-------------------------------------------- PASO 5 ---------------------------------------------------->
+<br>
+
+	<div class="row" id="paso5" style="display: none;">
+		<div class="col-12"> <hr>
+			<form name="registro" onsubmit="return validarFormPaso5(event)">		
+				<h5>
+					<strong>Motivo por el que solicita</strong>
+				</h5>
+				<!-- Motivo y aceptar condiciones-->
+				<div class="row">
+					<div class="col 6">
+						<div class="form-group">
+							<label for="motivo">Motivo</label>
+							<select class="form-control" id="motivo">
+								<option value="seg"> Seguridad </option>
+								<option value="med"> Medicina </option>
+								<option value="alim"> Industria alimenticia	</option>
+								<option value="fer"> Ferretería </option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-6">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="chkTerms">
+							<label class="form-check-label" for="chkTerms">Aceptar 
+								<a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
+							</label>						
+						</div>
+						<button type="submit" class="btn btn-primary mt-3">Enviar Registro</button>
+					</div>	
+				</div>  
+			</form>
+		</div>
+	</div>	
+
+  </div>	
+
+  <div class="col-4">
+	  <div class="col bg-light text-dark">
+		<br>  
+			<p> <strong> Información adicional </strong> </p>
+			<p><b style="color: red;">EL PRESENTE FORMULARIO REVISTE CARACTER DE DECLARACION JURADA, DEBIENDO SER COMPLETADO SIN OMITIR NI FALSEAR NINGUN DATO NI DOCUMENTACION. LOS INFRACTORES SERÁN PERSEGUIDOS PENAL Y CIVILMENTE POR LOS DAÑOS QUE PUEDAN OCASIONAR EN LOS TÉRMINOS DE LOS ARTICULOS 293 y 205 DEL CODIGO PENAL.</b></p>
+			<p>ARTICULO 293.- Será reprimido con reclusión o prisión de uno a seis años, el que insertare o hiciere insertar en un instrumento público declaraciones falsas, concernientes a un hecho que el documento deba probar, de modo que pueda resultar perjuicio.</p>
+			<p>Si se tratase de los documentos o certificados mencionados en el último párrafo del artículo anterior [documentos destinados a acreditar la identidad de las personas], la pena será de 3 a 8 años.</p>
+			<p>ARTICULO 205. - Será reprimido con prisión de seis meses a dos años, el que violare las medidas adoptadas por las autoridades competentes, para impedir la introducción o propagación de una epidemia.</p>
+
+			<p><b>EL PRESENTE CERTIFICADO DE PERMISO NO LIBERA AL SOLICITANTE DE EXHIBIR AL PERSONAL DE LAS FUERZAS DE SEGURIDAD LA DOCUMENTACIÓN INCORPORADA EN EL FORMULARIO PARA ACREDITAR QUE LA CIRCULACIÓN OBEDECE ESTRICTAMENTE AL MOTIVO POR EL QUE FUERA SOLICITADO EL PERMISO</b></p>
+
+	  </div>
+  </div>
+</div>  	
+	
+  	<div class="mt-3"></div>
+
+
+</div>  <!--cierre div container-->
+
+
+  <!------------------------------------------ Modal ------------------------------------>
+
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Terminos y condiciones</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			El usuario (en adelante el “Usuario y/o Ciudadano”) entiende que el acceso y uso de tales Activos Digitales resultará en la aceptación de los presentes Términos y Condiciones. Asimismo, el Usuario entiende que acepta la Política de Privacidad, anexo a los presentes Términos y Condiciones.
+
+			Capacidad para aceptar estos Términos y Condiciones
+			Usted afirma ser mayor de 18 años, menor emancipado o que posee permiso legal de sus padres y/o tutor y que está completamente habilitado y es competente para entender y aceptar sin reservas las obligaciones, afirmaciones, representaciones y garantías establecidas en estos Términos y Condiciones.
+
+					Los Activos Digitales utilizan información provista directamente por los Usuarios, información suministrada por terceros e información cedida a la Subsecretaría de Gobierno Digital por otros Organismos en los términos de lo dispuesto por la Ley de Protección de Datos Personales, Nº Ley 25.326. En este último caso, la Subsecretaría de Gobierno Digital no es responsable por daños y/o perjuicios que pudieran generarse por errores en la información cedida por dichos Organismos.
+
+			Derecho Aplicable y Jurisdicción
+			Los presentes Términos y Condiciones se rigen por las leyes de la República Argentina.
+			En caso de surgir cualquier controversia respecto de la interpretación o cumplimiento de los presentes, la misma será dirimida por los Tribunales en lo Contencioso Administrativo Federal con asiento en la Capital Federal.
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+		</div>
+	</div>
+	</div>
+
+
 </body>
 <script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
