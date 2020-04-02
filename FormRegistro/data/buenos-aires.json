@@ -1,7 +1,7 @@
 {
-	localidades:[
-		{ id: "retiro", texto: "Retiro" },
-		{ id: "nunez", texto: "Nuñez" },
-		{ id: "villa-del-parque", texto: "Villa del Parque" },
+	"localidades":[
+		{ "id": "retiro", "texto": "Retiro" },
+		{ "id": "nunez", "texto": "Nuñez" },
+		{ "id": "villa-del-parque", "texto": "Villa del Parque" }
 	]
 }
