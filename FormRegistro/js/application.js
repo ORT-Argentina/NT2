@@ -38,7 +38,7 @@ function checkPronvincia(id) {
 	}	
 }
 
-function validInput(e) {
+/*unction validInput(e) {
 	var first = false;
 	var percent = 0;
 	var error = false;
@@ -113,7 +113,7 @@ function validInput(e) {
 
 	return error ? false : true;
 }
-
+*/
 //---------------------------------------- INICIO VISUALIZACIÓN TABS ---------------------------------------//
 var currentTab = 0; // Por fecto inicia en el primer tab posicion (0)
 showTab(currentTab); // Activa la visualizacion del tab actual (El primero).
