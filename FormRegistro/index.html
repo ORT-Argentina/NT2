@@ -22,7 +22,7 @@
   <div class="row">
     <div class="col-12">
 	  	<form name="registro" onsubmit="return validInput(event);">
-			<div class="form-group tab" name="datosPersonales">
+			<div class="form-group tab" name="datosPersonales"><!-- DATOS PERSONALES Pag 1 -->
 				<div class="row"><!--Nombre-->
 					<div class="form-group col-sm-6 col-lg-6"><!--NOMBRE-->
 						<label for="txtNombre">Nombre</label>
@@ -30,7 +30,7 @@
 							<span class="input-group-text" id="basic-addon1">
 								<i class="iconsColor fas fa-address-book text-primary"></i>
 							</span>
-							<input type="text" class="form-control" id="txtNombre" placeholder="Ingrese su nombre" name="nombre" data-info="Completa la información de este campo para continuar">
+							<input maxlength="8" type="text" onkeypress="return restriLetras(event)" class="form-control" id="txtNombre" placeholder="Ingrese su nombre" name="nombre" data-info="Completa la información de este campo para continuar">
 						</div>
 					</div>
 					<div class="form-group col-sm-6 col-lg-6"><!--APELLIDO-->
@@ -39,7 +39,7 @@
 							<span class="input-group-text" id="basic-addon1">
 								<i class="iconsColor fas fa-address-book text-primary"></i>
 							</span>
-							<input type="text" class="form-control" id="txtApellido" placeholder="Ingreso su Apellido" data-info="Completa la información de este campo para continuar">
+							<input maxlength="8" type="text" onkeypress="return restriLetras(event)" class="form-control" id="txtApellido" placeholder="Ingreso su Apellido" data-info="Completa la información de este campo para continuar">
 						</div>
 					</div>
 				</div>
@@ -50,7 +50,7 @@
 						<span class="input-group-text" id="basic-addon1">
 							<i class="iconsColor fas fa-globe-europe"></i>
 						</span>
-						<select class="form-control" id="txtFechaNacimiento" name="txtFechaNacimiento">
+						<select class="form-control" id="txtNacionalidad" name="txtNacionalidad">
 							<option value="0">-</option>
 							<option value="1">Argentino/a</option>
 							<option value="2">Colombiano/a</option>
@@ -115,7 +115,7 @@
 				</div>
 			</div>
 
-			<div class="form-group tab" name="datosDomicilio">  <!-- DATOS DE DOMICILIO  -->
+			<div class="form-group tab" name="datosDomicilio">  <!-- DATOS DE DOMICILIO Pag 2 -->
 				<div class="row"><!--DIRECCION-->
 					<div id="contenedorProvinciaD" class="form-group col-sm-12 col-lg-12">  <!--Provincia Domicilio -->
 						<label for="cmbProvincia">Provincia </label>
@@ -166,7 +166,7 @@
 				</div>
 			</div>
 
-			<div class="form-group tab" name="datosContacto">  <!-- DATOS DE CONTACTO  -->
+			<div class="form-group tab" name="datosContacto">  <!-- DATOS DE CONTACTO Pag 3 -->
 				<div class="form-group">  <!-- celular Contacto  -->
 					<label for="txtCelular">Celular</label>
 					<div class="input-group mb-3">
@@ -176,16 +176,18 @@
 						<input type="text" class="form-control" id="txtCelular" placeholder="Ingrese su telefono celular" name="celular" data-info="Completa la información de este campo para continuar">
 					</div>
 				</div>
+				
 				<div class="form-group">  <!--  Email Contacto-->
 					<label for="txtEmail">Correo electronico</label>
 					<div class="input-group mb-3">
 						<span class="input-group-text" id="basic-addon1">
 							<i class="iconsColor far fa-envelope"></i>
 						</span>
-						<input type="text" class="form-control" id="txtEmail" placeholder="Ingrese su email de contacto" name="email" data-info="Completa la información de este campo para continuar">
+						<input type="email" class="form-control" id="txtEmail" placeholder="Ingrese su email de contacto" name="email" data-info="Completa la información de este campo para continuar">
 						
 					</div>
 				</div>
+				
 				<div class="form-group">  <!--  Cuenta Github -->
 					<label for="txtGithub">Cuenta de Github</label>
 					<div class="input-group mb-3">
@@ -198,7 +200,7 @@
 				</div>
 			</div>
 
-			<div class="form-group tab" name="datosLaborales">  <!-- DATOS LABORALES  -->
+			<div class="form-group tab" name="datosLaborales">  <!-- DATOS LABORALES Pag 4 -->
 				<div class="form-group">
 					<label for="txtLugarTrabajo">Lugar de Trabajo</label>  <!-- LUGAR DE TRABAJO -->
 					<div class="input-group mb-3">
@@ -275,7 +277,7 @@
 				</div>
 			</div>
 
-			<div class="form-group tab" name="motivoSolicitud"><!--MOTIVO SOLICITUD-->
+			<div class="form-group tab" name="motivoSolicitud"><!--MOTIVO SOLICITUD Pag 5 -->
 				<div class="form-group">
 					<label for="txtMotivo">Motivo</label>
 					<div class="input-group mb-3">
@@ -350,6 +352,7 @@
 <script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery.mask.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/validation.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/application.js" type="text/javascript" charset="utf-8" async defer></script>
 <script src="js/IconsFontAwesome.js"></script>
 </html>
