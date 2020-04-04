@@ -12,13 +12,13 @@
 	<!--link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"-->
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-  <a class="navbar-brand text-white" href="#">Formulario de Registro</a>
-</nav>
 
-<div class="container mt-3">
+<div class="container mt-3 wrapper">
+	<nav class="text-center as">
+		<h1>Formulario de Registro</h1>
+	</nav>
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 inner">
 	  	<form name="registro" onsubmit="return validInput(event);">
 			<div class="form-group tab" name="datosPersonales">
 				<div class="row"><!--Nombre-->
@@ -291,10 +291,13 @@
 			</div>
 		
 			
-			<div style="overflow:auto;"><!--BUTTONS NEXT/PREV-->
-				<div class="text-center">
-					<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-					<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+			<div ><!--BUTTONS NEXT/PREV-->
+				<div class="text-center row">
+					<div class="col-6">
+						<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+					</div class="col-6">
+						<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+					</div>
 				</div>
 			</div>
 			
