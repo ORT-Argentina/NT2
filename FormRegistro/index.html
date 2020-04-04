@@ -13,6 +13,7 @@
 </head>
 <body>
 
+
 <div class="container mt-3 wrapper">
 	<nav class="text-center as">
 		<h1>Formulario de Registro</h1>
@@ -20,7 +21,8 @@
   <div class="row">
     <div class="col-12 inner">
 	  	<form name="registro" onsubmit="return validInput(event);">
-			<div class="form-group tab" name="datosPersonales">
+			<div class="form-group tab" name="datosPersonales"> <!--DATOS PERSONALES-->
+				<h2 >Datos Personales</h2>
 				<div class="row"><!--Nombre-->
 					<div class="form-group col-sm-6 col-lg-6"><!--NOMBRE-->
 						<label for="txtNombre">Nombre</label>
@@ -114,6 +116,7 @@
 			</div>
 
 			<div class="form-group tab" name="datosDomicilio">  <!-- DATOS DE DOMICILIO  -->
+				<h2 >Domicilio</h2>
 				<div class="row"><!--DIRECCION-->
 					<div id="contenedorProvinciaD" class="form-group col-sm-12 col-lg-12">  <!--Provincia Domicilio -->
 						<label for="cmbProvincia">Provincia </label>
@@ -165,38 +168,42 @@
 			</div>
 
 			<div class="form-group tab" name="datosContacto">  <!-- DATOS DE CONTACTO  -->
-				<div class="form-group">  <!-- celular Contacto  -->
-					<label for="txtCelular">Celular</label>
-					<div class="input-group mb-3">
-						<span class="input-group-text" id="basic-addon1">
-							<i class="iconsColor fas fa-mobile-alt"></i>
-						</span>
-						<input type="text" class="form-control" id="txtCelular" placeholder="Ingrese su telefono celular" name="celular" data-info="Completa la información de este campo para continuar">
-					</div>
-				</div>
-				<div class="form-group">  <!--  Email Contacto-->
-					<label for="txtEmail">Correo electronico</label>
-					<div class="input-group mb-3">
-						<span class="input-group-text" id="basic-addon1">
-							<i class="iconsColor far fa-envelope"></i>
-						</span>
-						<input type="text" class="form-control" id="txtEmail" placeholder="Ingrese su email de contacto" name="email" data-info="Completa la información de este campo para continuar">
-						
-					</div>
-				</div>
-				<div class="form-group">  <!--  Cuenta Github -->
-					<label for="txtGithub">Cuenta de Github</label>
-					<div class="input-group mb-3">
-						<span class="input-group-text" id="basic-addon1">
-							<i class="iconsColor fab fa-github"></i>
-						</span>
-						<input type="text" class="form-control" id="txtGithub" placeholder="Ingrese su cuenta de github" name="altura" data-info="Completa la información de este campo para continuar">
-						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
-					</div>
+				<h2 >Contacto</h2>
+				<div class="row">
+						<div class="form-group col-sm-12 col-lg-12">  <!-- celular Contacto  -->
+							<label for="txtCelular">Celular</label>
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="iconsColor fas fa-mobile-alt"></i>
+								</span>
+								<input type="text" class="form-control" id="txtCelular" placeholder="Ingrese su telefono celular" name="celular" data-info="Completa la información de este campo para continuar">
+							</div>
+						</div>
+						<div class="form-group col-sm-12 col-lg-12">  <!--  Email Contacto-->
+							<label for="txtEmail">Correo electronico</label>
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="iconsColor far fa-envelope"></i>
+								</span>
+								<input type="email" name="email" class="form-control" id="txtEmail" placeholder="Ingrese su email de contacto" name="email" data-info="Completa la información de este campo para continuar" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+								
+							</div>
+						</div>
+						<div class="form-group col-sm-12 col-lg-12">  <!--  Cuenta Github -->
+							<label for="txtGithub">Cuenta de Github</label>
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="iconsColor fab fa-github"></i>
+								</span>
+								<input type="text" class="form-control" id="txtGithub" placeholder="Ingrese su cuenta de github" name="altura" data-info="Completa la información de este campo para continuar">
+								<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+							</div>
+						</div>
 				</div>
 			</div>
 
 			<div class="form-group tab" name="datosLaborales">  <!-- DATOS LABORALES  -->
+				<h2 >Datos Labotales</h2>
 				<div class="form-group">
 					<label for="txtLugarTrabajo">Lugar de Trabajo</label>  <!-- LUGAR DE TRABAJO -->
 					<div class="input-group mb-3">
@@ -274,6 +281,7 @@
 			</div>
 
 			<div class="form-group tab" name="motivoSolicitud"><!--MOTIVO SOLICITUD-->
+				<h2 >Motivo de solicitud</h2>
 				<div class="form-group">
 					<label for="txtMotivo">Motivo</label>
 					<div class="input-group mb-3">
@@ -287,28 +295,25 @@
 						</label>
 					</div>
 				</div>
-				
 			</div>
 		
-			
 			<div ><!--BUTTONS NEXT/PREV-->
 				<div class="text-center row">
 					<div class="col-6">
 						<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
 					</div class="col-6">
 						<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-					</div>
+					</div class="col-6">
+					<div><!-- Circles which indicates the steps of the form: -->
+						<div style="text-align:center;margin-top:40px;"><!--STEPS-->
+						<span class="step"></span>
+						<span class="step"></span>
+						<span class="step"></span>
+						<span class="step"></span>
+						</div>	</div>
 				</div>
 			</div>
-			
-			<!-- Circles which indicates the steps of the form: -->
-			<div style="text-align:center;margin-top:40px;"><!--STEPS-->
-			<span class="step"></span>
-			<span class="step"></span>
-			<span class="step"></span>
-			<span class="step"></span>
-			</div>	
-
+	
 			<button type="submit" class="btn btn-primary mt-3" hidden>Enviar Registro</button>
 		</form>
     </div>

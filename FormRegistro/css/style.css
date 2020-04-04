@@ -25,30 +25,32 @@
 
 
 
+
 body {
   font-family: "Montserrat-Regular";
   background-color: black;
   color: #fff;
   font-size: 15px;
-  margin: 0; }
+  margin: 0; 
+  background: url("../images/bg-registration-form-7.jpg") ;
+  background-attachment: fixed;
+   background-position: center center;
+   background-size: cover; 
+   overflow-x: hidden;
+}
 
 input, textarea, select, button {
   font-family: "Montserrat-Regular";
   font-size: 15px; }
 
 .as{
-  padding-top: 10px;
-  margin-bottom:44px;
+  margin-bottom:23px;
 }
 
 .wrapper {
   min-height: 100vh;
-  
-  align-items: center;
-  background: url("../images/bg-registration-form-7.jpg") no-repeat;
-  background-size: cover; 
+  align-items: center; 
 }
-
 .inner {
   display: table-cell;
   margin-left: auto;
@@ -66,14 +68,13 @@ input, textarea, select, button {
 
 
 
-
 button {
   border: none;
   width: 162px;
   height: 51px;
   border: 2px solid #fff;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 36px;
   cursor: pointer;
   display: flex;
   align-items: center;
