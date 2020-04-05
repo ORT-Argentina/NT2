@@ -13,24 +13,12 @@ $(document).ready(function () {
 
 });
 
-function checkPronvincia() {
-	var object = event.target;
-
-	console.log(event.target.value);
-
-	$.get("json/buenos-aires.json", function (data) {
-		console.log("Martin");
-	});
-
-	//console.log($(event.target).children(":first").data('ort'));
-
+function checkProvincia(event) {
 	if (event.target.value == "ciudad") {
-		$("#cmbLocalidad").parent().show('slow');
+		$("#localidad").parent().show('slow');
 	} else {
-		$("#cmbLocalidad").parent().hide('slow');
-		//document.getElementById('cmbLocalidad').parentNode.setAttribute('style', 'display:none');
+		$("#localidad").parent().hide('slow');
 	}
-
 }
 
 function validarForm(e) {
@@ -107,4 +95,18 @@ function validarForm(e) {
 	}
 
 	return error ? false : true;
+}
+
+
+
+/* Personal de salud */
+
+function checkPersonalSalud(event, input) {
+
+	if (input.value == "si") {
+		$("#seccion-salud").show("slow");
+	} else {
+		$("#seccion-salud").hide("slow");
+	}
+
 }
