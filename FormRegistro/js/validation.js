@@ -1,5 +1,5 @@
 function validFirstPage(){
-    //text="[a-zA-Z ]{2,254}" //--> Te permitirá ingresar letras de la a la z, un mínimo de 2 caracteres y máximo 254
+    const text = new RegExp('^[A-Z]+$', 'i');
     var nacionalidad, genero, documento, nDocumento, nTrámite, fNacimiento, nombre, apellido;
     nombre = document.getElementById("txtNombre").value;
     apellido = document.getElementById("txtApellido").value;
@@ -7,14 +7,16 @@ function validFirstPage(){
     nDocumento = document.getElementById("txtNacionalidad").value;
     nTrámite = document.getElementById("txtNombre").value;
     fNacimiento = document.getElementById("txtApellido").value;
+    
     if(nombre == "" || apellido=="" || nacionalidad==0 || nDocumento=="" || nTrámite=="" || fNacimiento==""){
         alert("Todos los campos deben ser completados");
         return false;
     }
-    if(text!=nombre || text!= apellido){
+    if(!text.test(nombre) || !text.test(apellido)){
+        console.log("assd")
         return false;
     }
-    
+    return true;
 }
 
 function restriLetras(entrada){
@@ -33,12 +35,19 @@ function restriLetras(entrada){
     }
 }
 
+function validThirdPage(){
+    var email, url, celular;
+    email = document.getElementById("txtEmail").value;
+    url = document.getElementById("txtGithub").value;
+    celular = document.getElementById("txtCelular").value;
+    
+    var expresionMail = /\w+@\w+\.+[a-z]/;
 
-
-/*var expresionMail = /\w+@\w+\.+[a-z]/;
-
-if(!expresionMail.test(email)){
-    alert("email incorrecto");
-    return false;
+    if(!expresionMail.test(email)){
+        alert("email incorrecto");
+        return false;
+    }
+    return true;
 }
-return true;*/
+
+

@@ -141,7 +141,9 @@ function nextPrev(n) {
 	// This function will figure out which tab to display
 	var x = document.getElementsByClassName("tab");
 	// Exit the function if any field in the current tab is invalid:
-	if (n == 1 && (!validateForm() || !'./validFirstPage()')) return false;
+	if (n == 1 && !validateForm()) return false;
+	if (!validFirstPage()) return false;
+	if (currentTab==2 && !validThirdPage()) return false;
 	// Hide the current tab:
 	x[currentTab].style.display = "none";
 	// Increase or decrease the current tab by 1:
