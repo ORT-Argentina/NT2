@@ -13,6 +13,7 @@ $(document).ready(function () {
 
 });
 
+<<<<<<< HEAD
 function checkPronvincia() {
 	var laboral = document.getElementById('cmbLocalidadL');
 	var domicilio = document.getElementById('cmbLocalidad');
@@ -27,6 +28,31 @@ function checkPronvincia() {
 	}else {
 		$("#cmbLocalidad").parents().hide('slow');
 	}
+=======
+function checkPronvincia(id) {
+	var domicilioPersonal = document.getElementById("cmbProvincia");
+	var domicilioLaboral = document.getElementById("cmbProvinciaL");
+	var divDomicilio = document.getElementById("divLocalidad");
+	var divLaboral = document.getElementById("divLocalidadL");
+	var divContenedorProvinciaD = document.getElementById("contenedorProvinciaD");
+	var divContenedorProvinciaL = document.getElementById("contenedorProvinciaL");
+
+	if(domicilioPersonal.id == id){
+		divDomicilio.style.display = "none";
+		divContenedorProvinciaD.className = divContenedorProvinciaD.className.replace(" col-sm-6 col-lg-6", " col-sm-12 col-lg-12") ;
+		if(domicilioPersonal.value=="ciudad"){
+			divDomicilio.style.display = "block";
+			divContenedorProvinciaD.className = divContenedorProvinciaD.className.replace(" col-sm-12 col-lg-12", " col-sm-6 col-lg-6") ;
+		}
+	}else{
+		divLaboral.style.display = "none";
+		divContenedorProvinciaL.className = divContenedorProvinciaL.className.replace(" col-sm-6 col-lg-6", " col-sm-12 col-lg-12") ;
+		if(domicilioLaboral.value=="ciudad"){
+			divLaboral.style.display = "block";
+			divContenedorProvinciaL.className = divContenedorProvinciaL.className.replace(" col-sm-12 col-lg-12", " col-sm-6 col-lg-6") ;
+		}
+	}	
+>>>>>>> master
 }
 
 function validInput(e) {
@@ -93,6 +119,25 @@ function validInput(e) {
 				$(this).removeClass('wobble animated');
 			});
 		}
+		// agregado para validar matricula y autoridad
+
+		/*  el if verifica si es ta marcado el checkbox y si el valor esta vacio para actualizar el estado en invalid o del caso contrario en valido
+
+		if ( document.getElementById('chkPSalud').is(':checked') && document.getElementById('matricula').value == "") {
+			$('#matricula').addClass('is-invalid');
+			error = true;
+		} else {
+			
+			$('#matricula').removeClass('is-invalid').addClass('is-valid');
+		}
+		
+		if ( document.getElementById('chkPSalud').is(':checked') && document.getElementById('autoridad').value == "") {
+			$('#autoridad').addClass('is-invalid');
+			error = true;
+		} else {
+			
+			$('#autoridad').removeClass('is-invalid').addClass('is-valid');
+		}  */
 
 		$(".progress-bar").css('width', percent + '%');
 
@@ -133,15 +178,17 @@ function nextPrev(n) {
 	var x = document.getElementsByClassName("tab");
 	// Exit the function if any field in the current tab is invalid:
 	if (n == 1 && !validateForm()) return false;
+	if (!validFirstPage()) return false;
+	if (currentTab==2 && !validThirdPage()) return false;
 	// Hide the current tab:
 	x[currentTab].style.display = "none";
 	// Increase or decrease the current tab by 1:
 	currentTab = currentTab + n;
 	// if you have reached the end of the form... :
 	if (currentTab >= x.length) {
-	  //...the form gets submitted:
-	  document.getElementById("regForm").submit();
-	  return false;
+	//...the form gets submitted:
+		document.getElementById("regForm").submit();
+		return false;
 	}
 	// Otherwise, display the correct tab:
 	showTab(currentTab);
@@ -183,3 +230,29 @@ x[n].className += " active";
 }
 
   //-------------------------------------- FIN VISUALIZACION TABS -------------------------------------------//
+
+
+
+ // --------------- Es profesional de la salud ? muestra el cambio en caso de ser si!---------//
+  function checkProfesionalSalud() {
+	var esProSalud = document.getElementById("chkPSalud");
+	var divMatricula = document.getElementById("divMatricula");
+	var divAutoridad = document.getElementById("divAutoridad");
+	var inpMatricula = document.getElementById("matricula");
+	var inpAutoridad = document.getElementById("autoridad");
+	
+	
+		if(esProSalud.checked){
+			divMatricula.style.display = "block";
+			divAutoridad.style.display = "block";
+			
+			
+		}else{
+			divMatricula.style.display = "none";
+			divAutoridad.style.display = "none";
+			//inpMatricula.className.replace("invalid","valid");  no funciono esta opcion para actualizar el estado del className en valido 
+			//inpAutoridad.className.replace("invalid","valid");  y poder continuar sin los campos requeridos 
+		}
+	}
+		
+
