@@ -23,6 +23,118 @@
 	<div class="container mt-3">
 		<!-- Datos Personales (Pablo) -->
 
+		<div class="datos_personales">
+			<p class="h5 mb-3">Datos personales</p>
+
+      	<div class="row">
+    		<div class="col-6">
+			  <div class="form-group">
+			    <label for="txtNombre">Nombre</label>
+			    <div class="input-group mb-3">
+			    	<div class="input-group-prepend">
+				    	<span class="input-group-text" id="basic-addon1">
+				    		<i class="fas fa-address-book text-primary"></i>
+				    	</span>
+				  	</div>
+			    	<input type="text" class="form-control" id="txtNombre" placeholder="Ingrese su nombre" name="nombre" data-info="Completa la información de este campo para continuar">
+			    	<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+			    </div>
+			  </div>
+			</div>
+			<div class="col-6">
+			  <div class="form-group">
+			    <label for="txtApellido">Apellido</label>
+			    <div class="input-group mb-3">
+			    	<div class="input-group-prepend">
+				    	<span class="input-group-text" id="basic-addon1">
+				    		<i class="fas fa-address-book text-primary"></i>
+				    	</span>
+				  	</div>
+			    	<input type="text" class="form-control" id="txtApellido" placeholder="Ingreso su Apellido" data-info="Completa la información de este campo para continuar">
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		
+		<div class="form-group">
+			<label for="txtNacionalidad">Nacionalidad </label>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">
+						<i class="fas fa-id-card text-primary"></i>
+					</span>
+				  </div>
+				<input type="text" class="form-control" id="txtNacionalidad" placeholder="Ingreso su Nacionalidad" data-info="Completa la información de este campo para continuar">
+			</div>
+		  </div>
+
+		  
+	  <div class="form-group">
+	    <label for="txtGenero">Genero </label>
+	    <div class="input-group mb-3">
+	    	<div class="input-group-prepend">
+		    	<span class="input-group-text" id="basic-addon1">
+		    		<i class="fas fa-id-card text-primary"></i>
+		    	</span>
+		  	</div>
+	    	<input type="text" class="form-control" id="txtGenero" placeholder="Ingreso su genero" data-info="Completa la información de este campo para continuar">
+	    </div>
+	  </div>
+
+	  
+	  <div class="form-group">
+	    <label for="txtTipoDocumento">Tipo de documento </label>
+	    <div class="input-group mb-3">
+	    	<div class="input-group-prepend">
+		    	<span class="input-group-text" id="basic-addon1">
+		    		<i class="fas fa-id-card text-primary"></i>
+		    	</span>
+		  	</div>
+	    	<input type="text" class="form-control" id="txtTipoDocumento" placeholder="Ingreso tipo de documento" data-info="Completa la información de este campo para continuar">
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	    <label for="txtDni">DNI </label>
+	    <div class="input-group mb-3">
+	    	<div class="input-group-prepend">
+		    	<span class="input-group-text" id="basic-addon1">
+		    		<i class="fas fa-id-card text-primary"></i>
+		    	</span>
+		  	</div>
+	    	<input type="text" class="form-control" id="txtDni" placeholder="Ingreso su DNI" data-info="Completa la información de este campo para continuar">
+	    </div>
+	  </div>
+
+	  
+	  <div class="form-group">
+	    <label for="txtNumeroTramite">Numero de tramite del DNI </label>
+	    <div class="input-group mb-3">
+	    	<div class="input-group-prepend">
+		    	<span class="input-group-text" id="basic-addon1">
+		    		<i class="fas fa-id-card text-primary"></i>
+		    	</span>
+		  	</div>
+	    	<input type="text" class="form-control" id="txtNumeroTramite" placeholder="Ingreso numero de tramite" data-info="Completa la información de este campo para continuar">
+	    </div>
+	  </div>
+
+	  
+	  <div class="form-group">
+	    <label for="txtFecNac">Fecha de nacimiento </label>
+	    <div class="input-group mb-3">
+	    	<div class="input-group-prepend">
+		    	<span class="input-group-text" id="basic-addon1">
+		    		<i class="fas fa-id-card text-primary"></i>
+		    	</span>
+		  	</div>
+	    	<input type="date" class="form-control" id="txtFecNac" placeholder="Ingreso su fecha de nacimiento" data-info="Completa la información de este campo para continuar">
+	    </div>
+	  </div>
+	</div>
+
+
 		<!-- Datos de Domicilio (Macarena) -->
 		<div class="row">
 			<div class="col-12">
@@ -119,6 +231,68 @@
 			</div>
 		</div>
 		<!-- Datos de Contacto (Pablo) -->
+
+			<div class="row">
+				<div class="col-12">
+					<p class="h5 mb-3">Datos de Contacto</p>
+					<form name="registro" onsubmit="return validarForm(event);">
+						<div class="row">
+							<div class="col-6">
+								<div class="form-group">
+									<label for="altura">Telefono celular</label>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text">
+												<i class="fas fa-address-book text-primary"></i>
+											</span>
+										</div>
+										<input type="text" class="form-control" id="telfcelular" placeholder="Telefono celular"
+											name="telefonoCelular"
+											data-info="Completa la información de este campo para continuar">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6">
+								<div class="form-group">
+									<label for="piso">Correo electronico </label>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text">
+												<i class="fas fa-building text-primary"></i>
+											</span>
+										</div>
+										<input type="text" class="form-control" id="email" placeholder="E-mail"
+											name="correoElectronico"
+											data-info="Completa la información de este campo para continuar">
+									</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-group">
+									<label for="txtCuentaGitHub">Cuenta de github </label>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text">
+												<i class="fas fa-building text-primary"></i>
+											</span>
+										</div>
+										<input type="text" class="form-control" id="cuentaGitHub" placeholder="Cuenta gitHub"
+											name="cuentaDeGitHub"
+											data-info="Completa la información de este campo para continuar">
+									</div>
+								</div>
+							</div>
+						</div>
+	
+					</form>
+				</div>
+			</div>
+		
+
+		
+
 
 		<!-- Datos Laborales (Macarena) -->
 		<div class="row">
@@ -348,6 +522,7 @@
 			<button type="submit" class="btn btn-primary mt-3" id="botonEnviar">Enviar Registro</button>
 			<button onClick="showHideDiv()" id="botonSiguiente">Siguiente</button>
 		</div>
+		<div class="mt-3"></div>
 	</div> <!-- End form container-->
 
 	<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
