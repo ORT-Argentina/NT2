@@ -102,6 +102,25 @@ function validInput(e) {
 				$(this).removeClass('wobble animated');
 			});
 		}
+		// agregado para validar matricula y autoridad
+
+		/*  el if verifica si es ta marcado el checkbox y si el valor esta vacio para actualizar el estado en invalid o del caso contrario en valido
+
+		if ( document.getElementById('chkPSalud').is(':checked') && document.getElementById('matricula').value == "") {
+			$('#matricula').addClass('is-invalid');
+			error = true;
+		} else {
+			
+			$('#matricula').removeClass('is-invalid').addClass('is-valid');
+		}
+		
+		if ( document.getElementById('chkPSalud').is(':checked') && document.getElementById('autoridad').value == "") {
+			$('#autoridad').addClass('is-invalid');
+			error = true;
+		} else {
+			
+			$('#autoridad').removeClass('is-invalid').addClass('is-valid');
+		}  */
 
 		$(".progress-bar").css('width', percent + '%');
 
@@ -194,4 +213,29 @@ x[n].className += " active";
 }
 
   //-------------------------------------- FIN VISUALIZACION TABS -------------------------------------------//
+
+
+
+ // --------------- Es profesional de la salud ? muestra el cambio en caso de ser si!---------//
+  function checkProfesionalSalud() {
+	var esProSalud = document.getElementById("chkPSalud");
+	var divMatricula = document.getElementById("divMatricula");
+	var divAutoridad = document.getElementById("divAutoridad");
+	var inpMatricula = document.getElementById("matricula");
+	var inpAutoridad = document.getElementById("autoridad");
+	
+	
+		if(esProSalud.checked){
+			divMatricula.style.display = "block";
+			divAutoridad.style.display = "block";
+			
+			
+		}else{
+			divMatricula.style.display = "none";
+			divAutoridad.style.display = "none";
+			//inpMatricula.className.replace("invalid","valid");  no funciono esta opcion para actualizar el estado del className en valido 
+			//inpAutoridad.className.replace("invalid","valid");  y poder continuar sin los campos requeridos 
+		}
+	}
+		
 

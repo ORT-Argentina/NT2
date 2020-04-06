@@ -271,13 +271,30 @@
 						</div>
 					</div>
 				</div>
+				
 
-				<div><!--PROFESIONAL SALUD-->
-					<div class="form-group col-sm-6 col-lg-6">
+				
+				<div name="divProfesionalSalud"><!--PROFESIONAL SALUD-->
+					<div id="contenerProfesionalSalud" >
 						<label for="profeSalud">¿Es Profesional de Salud?</label>
-						<input class="form-check-input" type="checkbox" id="chkPSalud">
+						<input class="form-check-input" type="checkbox" id="chkPSalud"  onchange="checkProfesionalSalud()" style=" width: 120px;">
 					</div>
+					<!--falta validar el checkPSalud, cuando no este seleccionado no debe requerir llenar los campos matricula y autoridad -->
+					<div class="row">
+						<div id="divMatricula" class="form-group col-sm-6 col-lg-6" style="display:none;"><!--MATRICULA-->
+							<label for="cmbMatricula">Matricula</label>
+							<input type="text" id="matricula" name= "matricula" class="form-control" >
+						</div>
+					<!--falta validar el checkPSalud, cuando no este seleccionado no debe requerir llenar los campos matricula y autoridad -->
+						<div id="divAutoridad" class="form-group col-sm-6 col-lg-6" style="display:none;"><!--AUTORIDAD EMISORA-->
+							<label for="cmbMatricula">Autoridad Emisora</label>
+							<input type="text" id="autoridad" name= "autoridad" class="form-control">
+						</div>
+					</div>
+					
 				</div>
+
+				
 			</div>
 
 			<div class="form-group tab" name="motivoSolicitud"><!--MOTIVO SOLICITUD-->
@@ -290,13 +307,18 @@
 					</div>
 					
 				</div>
-				<div class="form-group">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="chkTerms">
-						<label class="form-check-label" for="chkTerms">
+				
+				<div class="form-group" class="row">
+					<div class="form-check" class="form-group col-sm-6 col-lg-6">
+						
+						<label class="form-check-label" for="chkTerms" >
 						Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
 						</label>
 					</div>
+					
+					<div class="form-group col-sm-6 col-lg-6">
+							<input class="form-check-input" type="checkbox" value="" id="chkTerms">
+						</div>
 				</div>
 			</div> 
 		
