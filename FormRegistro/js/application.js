@@ -33,6 +33,7 @@ function checkPronvincia() {
 
 }
 
+
 function validarForm(e) {
 	var first = false;
 	var percent = 0;
@@ -49,15 +50,24 @@ function validarForm(e) {
 		}
 
 		if (document.getElementById('txtApellido').value == "") {
-			$('#txtApellido').addClass('is-invalid');
 			error = true;
+			document.getElementById('txtApellido').setAttribute('class', 'form-control is-invalid');
 		} else {
 			percent += 10;
+			//Con JQuery
 			$('#txtApellido').removeClass('is-invalid').addClass('is-valid');
 		}
 
-		if (document.getElementById('txtDni').value == ""
-			|| !Number(document.getElementById('txtDni').value)) {
+		if (document.getElementById('txtFecha').value == "") {
+			error = true;
+			document.getElementById('txtFecha').setAttribute('class', 'form-control is-invalid');
+		} else {
+			percent += 10;
+			//Con JQuery
+			$('#txtFecha').removeClass('is-invalid').addClass('is-valid');
+		}
+
+		if (document.getElementById('txtDni').value == "") {
 			$('#txtDni').addClass('is-invalid');
 			error = true;
 		} else {
@@ -65,12 +75,20 @@ function validarForm(e) {
 			$('#txtDni').removeClass('is-invalid').addClass('is-valid');
 		}
 
-		if ($('#cmbProvincia').val() == "") {
-			$('#cmbProvincia').addClass('is-invalid');
+		if (document.getElementById('numTramite').value == "") {
+			$('#numTramite').addClass('is-invalid');
 			error = true;
 		} else {
 			percent += 10;
-			$('#cmbProvincia').removeClass('is-invalid').addClass('is-valid');
+			$('#numTramite').removeClass('is-invalid').addClass('is-valid');
+		}
+
+		if ($('#cmbNacionalidad , #cbmGenero, #cmbTipoDoc').val() == "") {
+			$('#cmbNacionalidad , #cbmGenero, #cmbTipoDoc').addClass('is-invalid');
+			error = true;
+		} else {
+			percent += 10;
+			$('#cmbNacionalidad , #cbmGenero, #cmbTipoDoc').removeClass('is-invalid').addClass('is-valid');
 		}
 
 		if (document.getElementById('txtEmail').value.indexOf("@") < 0
@@ -83,12 +101,12 @@ function validarForm(e) {
 			$('#txtEmail').removeClass('is-invalid').addClass('is-valid');
 		}
 
-		if ($('#txtphone').val() == "") {
+		if ($('#txtFecha').val() == "") {
 			error = true;
-			$('#txtphone').addClass('is-invalid');
+			$('#txtFecha').addClass('is-invalid');
 		} else {
 			percent += 20;
-			$('#txtphone').removeClass('is-invalid').addClass('is-valid');
+			$('#txtFecha').removeClass('is-invalid').addClass('is-valid');
 		}
 
 		if (!$("#chkTerms").is(':checked')) {
