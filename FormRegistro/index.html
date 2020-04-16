@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
 	<title>Formulario de Registro</title>
-	
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/all.css">
 	<link rel="stylesheet" href="css/animate.css">
@@ -10,17 +11,20 @@
 
 	<!--link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"-->
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-  <a class="navbar-brand text-white" href="#">Formulario de Registro</a>
-</nav>
-<div class="progress">
-	<div class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-8">
-      <form name="registro" onsubmit="return validarForm(event);">
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<a class="navbar-brand text-white-50" href="#">Formulario de Registro</a>
+	</nav>
+	<div class="progress">
+		<div class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+		</div>
+	</div>
+	<div class="container mt-3">
+		<!-- Datos Personales (Pablo) -->
+
+		<div class="datos_personales">
+			<p class="h5 mb-3">Datos personales</p>
 
       	<div class="row">
     		<div class="col-6">
@@ -52,6 +56,45 @@
 			</div>
 		</div>
 
+		
+		<div class="form-group">
+			<label for="txtNacionalidad">Nacionalidad </label>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">
+						<i class="fas fa-id-card text-primary"></i>
+					</span>
+				  </div>
+				<input type="text" class="form-control" id="txtNacionalidad" placeholder="Ingreso su Nacionalidad" data-info="Completa la información de este campo para continuar">
+			</div>
+		  </div>
+
+		  
+	  <div class="form-group">
+	    <label for="txtGenero">Genero </label>
+	    <div class="input-group mb-3">
+	    	<div class="input-group-prepend">
+		    	<span class="input-group-text" id="basic-addon1">
+		    		<i class="fas fa-id-card text-primary"></i>
+		    	</span>
+		  	</div>
+	    	<input type="text" class="form-control" id="txtGenero" placeholder="Ingreso su genero" data-info="Completa la información de este campo para continuar">
+	    </div>
+	  </div>
+
+	  
+	  <div class="form-group">
+	    <label for="txtTipoDocumento">Tipo de documento </label>
+	    <div class="input-group mb-3">
+	    	<div class="input-group-prepend">
+		    	<span class="input-group-text" id="basic-addon1">
+		    		<i class="fas fa-id-card text-primary"></i>
+		    	</span>
+		  	</div>
+	    	<input type="text" class="form-control" id="txtTipoDocumento" placeholder="Ingreso tipo de documento" data-info="Completa la información de este campo para continuar">
+	    </div>
+	  </div>
+
 	  <div class="form-group">
 	    <label for="txtDni">DNI </label>
 	    <div class="input-group mb-3">
@@ -63,103 +106,446 @@
 	    	<input type="text" class="form-control" id="txtDni" placeholder="Ingreso su DNI" data-info="Completa la información de este campo para continuar">
 	    </div>
 	  </div>
-		  
-		  <div class="form-group">
-		    <label for="cmbProvincia">Provincia </label>
-		    <select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
-	    		<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
-				<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
-				<option value="buenos-aires">Buenos Aires</option>
-				<option value="santa-fe">Santa Fe</option>
-				<option value="la-pampa">La Pampa</option>
-				<option value="mendoza">Mendoza</option>
-		    </select>
-		  </div>
 
-		  <div class="form-group" style="display:none;">
-		    <label for="cmbLocalidad">Localidad</label>
-		    <select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
-				<option value="retiro">Retiro</option>
-				<option value="nunez">Nuñez</option>
-				<option value="villa-del-parque">Villa del Parque</option>
-				<option value="monte-castro">Monte Castro</option>
-				<option value="caballito">Caballito</option>
-		    </select>
-		  </div>
+	  
+	  <div class="form-group">
+	    <label for="txtNumeroTramite">Numero de tramite del DNI </label>
+	    <div class="input-group mb-3">
+	    	<div class="input-group-prepend">
+		    	<span class="input-group-text" id="basic-addon1">
+		    		<i class="fas fa-id-card text-primary"></i>
+		    	</span>
+		  	</div>
+	    	<input type="text" class="form-control" id="txtNumeroTramite" placeholder="Ingreso numero de tramite" data-info="Completa la información de este campo para continuar">
+	    </div>
+	  </div>
 
-		  <div class="form-group">
-		    <label for="txtEmail">E-Mail </label>
-		    <div class="input-group mb-3">
-		    	<div class="input-group-prepend">
+	  
+	  <div class="form-group">
+	    <label for="txtFecNac">Fecha de nacimiento </label>
+	    <div class="input-group mb-3">
+	    	<div class="input-group-prepend">
+		    	<span class="input-group-text" id="basic-addon1">
+		    		<i class="fas fa-id-card text-primary"></i>
+		    	</span>
+		  	</div>
+	    	<input type="date" class="form-control" id="txtFecNac" placeholder="Ingreso su fecha de nacimiento" data-info="Completa la información de este campo para continuar">
+	    </div>
+	  </div>
+	</div>
 
-			    	<span class="input-group-text" id="basic-addon1">
-			    		<i class="fas fa-at text-primary"></i>
-			    	</span>
-			  	</div>
-		    	<input type="email" class="form-control" id="txtEmail" placeholder="Ingreso su Correo Electronico">
-		    </div>
-		  </div>
 
-			<div class="form-group">
-			    <label for="txtEmail">Teléfono</label>
-			    <div class="input-group mb-3">
-			    	<div class="input-group-prepend">
-				    	<span class="input-group-text" id="basic-addon1">
-				    		<i class="fas fa-phone text-primary"></i>
-				    	</span>
-				  	</div>
-			    	<input type="text" class="form-control" id="txtphone" placeholder="Número de teléfono">
-			    </div>
-			  </div>
+		<!-- Datos de Domicilio (Macarena) -->
+		<div class="datos_domicilio">
+		<div class="row">
+			<div class="col-12">
+				<p class="h5 mb-3">Datos de Domicilio</p>
+				<form name="registro" onsubmit="return validarForm(event);">
+					<div class="row">
+						<div class="col-8">
+							<div class="form-group">
+								<label for="txtCalle">Calle</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="fas fa-road text-primary"></i>
+										</span>
+									</div>
+									<input type="text" class="form-control" id="txtCalle" placeholder="Calle"
+										name="calleDomicilio"
+										data-info="Completa la información de este campo para continuar">
+									<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+								</div>
+							</div>
+						</div>
+						<div class="col-4">
+							<div class="form-group">
+								<label for="txtAltura">Altura</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="fas fa-address-book text-primary"></i>
+										</span>
+									</div>
+									<input type="text" class="form-control" id="txtAltura" placeholder="Altura"
+										name="alturaDomicilio"
+										data-info="Completa la información de este campo para continuar">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<div class="form-group">
+								<label for="txtPiso">Piso </label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="fas fa-building text-primary"></i>
+										</span>
+									</div>
+									<input type="text" class="form-control" id="txtPiso" placeholder="Piso"
+										name="pisoDomicilio"
+										data-info="Completa la información de este campo para continuar">
+								</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<label for="txtDepto">Depto </label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="fas fa-building text-primary"></i>
+										</span>
+									</div>
+									<input type="text" class="form-control" id="txtDepto" placeholder="Depto"
+										name="deptoDomicilio"
+										data-info="Completa la información de este campo para continuar">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="txtProvincia">Provincia </label>
+						<select class="form-control" id="txtProvincia" onchange="checkProvincia(event, this)">
+							<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+							<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+							<option value="buenos-aires">Buenos Aires</option>
+							<option value="santa-fe">Santa Fe</option>
+							<option value="la-pampa">La Pampa</option>
+							<option value="mendoza">Mendoza</option>
+						</select>
+					</div>
 
-			<div class="form-check">
-			  <input class="form-check-input" type="checkbox" value="" id="chkTerms">
-			  <label class="form-check-label" for="chkTerms">
-			    Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
-			  </label>
+					<div class="form-group" style="display:none;">
+						<label for="txtLocalidad">Localidad</label>
+						<select class="form-control" id="txtLocalidad" name="localidad">
+							<option value="retiro">Retiro</option>
+							<option value="nunez">Nuñez</option>
+							<option value="villa-del-parque">Villa del Parque</option>
+							<option value="monte-castro">Monte Castro</option>
+							<option value="caballito">Caballito</option>
+						</select>
+					</div>
+				</form>
+			</div>
+		</div>
+		</div>
+		<!-- Datos de Contacto (Pablo) -->
+		<div class="datos_de_contacto">
+
+			<div class="row">
+				<div class="col-12">
+					<p class="h5 mb-3">Datos de Contacto</p>
+					<form name="registro" onsubmit="return validarForm(event);">
+						<div class="row">
+							<div class="col-6">
+								<div class="form-group">
+									<label for="altura">Telefono celular</label>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text">
+												<i class="fas fa-address-book text-primary"></i>
+											</span>
+										</div>
+										<input type="text" class="form-control" id="telfcelular" placeholder="Telefono celular"
+											name="telefonoCelular"
+											data-info="Completa la información de este campo para continuar">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6">
+								<div class="form-group">
+									<label for="piso">Correo electronico </label>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text">
+												<i class="fas fa-building text-primary"></i>
+											</span>
+										</div>
+										<input type="text" class="form-control" id="email" placeholder="E-mail"
+											name="correoElectronico"
+											data-info="Completa la información de este campo para continuar">
+									</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-group">
+									<label for="txtCuentaGitHub">Cuenta de github </label>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text">
+												<i class="fas fa-building text-primary"></i>
+											</span>
+										</div>
+										<input type="text" class="form-control" id="cuentaGitHub" placeholder="Cuenta gitHub"
+											name="cuentaDeGitHub"
+											data-info="Completa la información de este campo para continuar">
+									</div>
+								</div>
+							</div>
+						</div>
+	
+					</form>
+				</div>
 			</div>
 
-		  <button type="submit" class="btn btn-primary mt-3">Enviar Registro</button>
-		</form>
-    </div>
-    <div class="col bg-dark text-light">
-    	<div class="text-warning">
-    		<p id="helpInfo">Informaci&oacute;n adicional</p>
-    	</div>
-    </div>
-  </div>
-  <div class="mt-3"></div>
-  <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Terminos y condiciones</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        El usuario (en adelante el “Usuario y/o Ciudadano”) entiende que el acceso y uso de tales Activos Digitales resultará en la aceptación de los presentes Términos y Condiciones. Asimismo, el Usuario entiende que acepta la Política de Privacidad, anexo a los presentes Términos y Condiciones.
+		</div>
+		
 
-		Capacidad para aceptar estos Términos y Condiciones
-		Usted afirma ser mayor de 18 años, menor emancipado o que posee permiso legal de sus padres y/o tutor y que está completamente habilitado y es competente para entender y aceptar sin reservas las obligaciones, afirmaciones, representaciones y garantías establecidas en estos Términos y Condiciones.
+		
 
-				Los Activos Digitales utilizan información provista directamente por los Usuarios, información suministrada por terceros e información cedida a la Subsecretaría de Gobierno Digital por otros Organismos en los términos de lo dispuesto por la Ley de Protección de Datos Personales, Nº Ley 25.326. En este último caso, la Subsecretaría de Gobierno Digital no es responsable por daños y/o perjuicios que pudieran generarse por errores en la información cedida por dichos Organismos.
 
-		Derecho Aplicable y Jurisdicción
-		Los presentes Términos y Condiciones se rigen por las leyes de la República Argentina.
-		En caso de surgir cualquier controversia respecto de la interpretación o cumplimiento de los presentes, la misma será dirimida por los Tribunales en lo Contencioso Administrativo Federal con asiento en la Capital Federal.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+		<!-- Datos Laborales (Macarena) -->
+		<div class="datos_laborales">
+		<div class="row">
+			<div class="col-12">
+				<p class="h5 mb-3">Datos Laborales</p>
+				<form name="registro" onsubmit="return validarForm(event);">
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="txtLugarTrabajo">Lugar de trabajo</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="fas fa-globe text-primary"></i>
+										</span>
+									</div>
+									<input type="text" class="form-control" id="txtLugarTrabajo
+										placeholder=" Lugar de trabajo" name="trabajo"
+										data-info="Completa la información de este campo para continuar">
+									<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+								</div>
+							</div>
+						</div>
+						<div class="col-8">
+							<div class="form-group">
+								<label for="txtCalleTrabajo">Calle</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="fas fa-road text-primary"></i>
+										</span>
+									</div>
+									<input type="text" class="form-control" id="txtCalleTrabajo" placeholder="Calle"
+										data-info="Completa la información de este campo para continuar">
+								</div>
+							</div>
+						</div>
+						<div class="col-4">
+							<div class="form-group">
+								<label for="txtAlturaTrabajo">Altura</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="fas fa-address-book text-primary"></i>
+										</span>
+									</div>
+									<input type="text" class="form-control" id="txtAlturaTrabajo" placeholder="Altura"
+										data-info="Completa la información de este campo para continuar">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<div class="form-group">
+								<label for="txtPiso">Piso </label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="fas fa-building text-primary"></i>
+										</span>
+									</div>
+									<input type="text" class="form-control" id="txtPiso" placeholder="Piso"
+										data-info="Completa la información de este campo para continuar">
+								</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<label for="txtDepto">Depto </label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="fas fa-building text-primary"></i>
+										</span>
+									</div>
+									<input type="text" class="form-control" id="txtDepto" placeholder="Depto"
+										data-info="Completa la información de este campo para continuar">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="txtProvincia">Provincia </label>
+						<select class="form-control" id="txtProvincia" onchange="checkProvincia(event, this)">
+							<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+							<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+							<option value="buenos-aires">Buenos Aires</option>
+							<option value="santa-fe">Santa Fe</option>
+							<option value="la-pampa">La Pampa</option>
+							<option value="mendoza">Mendoza</option>
+						</select>
+					</div>
+
+					<div class="form-group" style="display:none;">
+						<label for="txtLocalidad">Localidad</label>
+						<select class="form-control" id="txtLocalidad" name="localidad">
+							<option value="retiro">Retiro</option>
+							<option value="nunez">Nuñez</option>
+							<option value="villa-del-parque">Villa del Parque</option>
+							<option value="monte-castro">Monte Castro</option>
+							<option value="caballito">Caballito</option>
+						</select>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="form-group">
+					<label for="txtTelLaboral">Teléfono Laboral</label>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text">
+								<i class="fas fa-phone text-primary"></i>
+							</span>
+						</div>
+						<input type="text" class="form-control" id="txtTelLaboral" placeholder="Número de Teléfono"
+							name="telLaboral" data-info="Completa la información de este campo para continuar">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="form-group">
+					<label for="txtProfesional">¿Es profesional de la salud?</label>
+					<div class="form-check">
+						<input type="radio" name="salud" class="form-check-input" id="si" value="si"
+							onchange="checkPersonalSalud(event, this)">
+						<label class="form-check-label" for="si">Si</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" name="salud" class="form-check-input" id="no" value="no"
+							onchange="checkPersonalSalud(event, this)">
+						<label class="form-check-label" for="no">No</label>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="row" style="display:none;" id="seccion-salud">
+			<div class="col-6">
+				<div class="form-group">
+					<label for="txtMatricula">Matrícula</label>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text">
+								<i class="fas fa-phone text-primary"></i>
+							</span>
+						</div>
+						<input type="text" class="form-control" id="txtMatricula" placeholder="Nº de Matrícula"
+							name="matricula" data-info="Completa la información de este campo para continuar">
+					</div>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="form-group">
+					<label for="txtAutoridad">Autoridad Emisora de la matrícula </label>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text">
+								<i class="fas fa-building text-primary"></i>
+							</span>
+						</div>
+						<input type="text" class="form-control" id="txtAutoridad" placeholder="Autoridad Emisora"
+							data-info="Completa la información de este campo para continuar">
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<!-- Motivo por el que solicita (Macarena) -->
+		<div class="motivo_consulta">
+		<div class="row">
+			<div class="col-12">
+				<p class="h5 mb-3">Motivo por el que solicita permiso</p>
+				<label for="txtMotivo">Motivo</label>
+				<div class="form-group">
+					<select name="motivo" id="txtMotivo" class="form-control select2" required="required">
+						<option value="0">Seleccione una opción</option>
+						<option value="1">Trabajo en producción, abastecimiento, almacenamiento o distribución de
+							alimentos</option>
+						<option value="2">Trabajo en un centro o establecimiento de salud o diagnóstico</option>
+						<option value="3">Trabajo en producción o abastecimiento de productos farmacéuticos y de primera
+							necesidad</option>
+						<option value="4">Trabajo en servicios de agua, saneamiento, energía eléctrica, gas,
+							combustible, telecomunicaciones, limpieza, recojo de residuos sólidos o servicios funerarios
+						</option>
+						<option value="5">Trabajo en entidades financieras, seguros y pensiones o servicios
+							complementarios y conexos a ellos</option>
+						<option value="6">Trabajo en producción, almacenamiento, transporte, distribución o venta de
+							combustible</option>
+						<option value="7">Trabajo en medios de comunicación y centrales de atención telefónica (call
+							center de atención de emergencias)</option>
+						<option value="8">Trabajo en servicios de vigilancia de empresa privada y transporte de dinero y
+							valores</option>
+						<option value="9">Trabajo en el sector público y presto servicios necesarios para la atención de
+							acciones relacionadas con la emergencia sanitaria producida por el COVID-19 o soy parte de
+							un área esencia</option>
+						<option value="10">Trabajo en actividades similares a las mencionadas anteriormente o que deban
+							realizarse por causa de fuerza mayor (servicios técnicos para emergencias del hogar, etc)
+						</option>
+						<option value="11">Trabajo en el Poder Ejecutivo para garantizar la continuidad de los servicios
+							mínimos, dispuesto por mi superior jerárquico</option>
+						<option value="12">Asistencia y cuidado a personas adultas mayores, niñas, niños, adolescentes,
+							dependientes, personas con discapacidad o personas en situación de vulnerabilidad</option>
+						<option value="13">Trabajo en un hotel o centro de alojamiento</option>
+						<option value="14">Otros</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="form-group">
+					<div class="form-check">
+						<input type="checkbox" name="termYCond" class="form-check-term" id="termYCond" value="si"
+							required="required" />
+						<label class="form-check-term" for="termYCond">
+							Aceptar <a href="#"><strong>Términos y condiciones</strong></a>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<div class="row">
+			<button type="submit" class="btn btn-primary mt-3" id="botonEnviar">Enviar Registro</button>
+			<button onClick="showHideDiv()" id="botonSiguiente">Siguiente</button>
+		</div>
+		<div class="mt-3"></div>
+	</div> <!-- End form container-->
+
+	<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+		<div class="container text-center">
+			<small>Copyright &copy; Your Website</small>
+		</div>
+	</footer>
+	<div class="mt-3"></div>
 </body>
 <script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery.mask.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/application.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="js/showHideDiv.js" type="text/javascript" charset="utf-8"></script>
+
 </html>
