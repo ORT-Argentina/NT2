@@ -1,128 +1,351 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Formulario de Registro</title>
 	
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/all.css">
+	
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/style.css">
 
 	<!--link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"-->
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-  <a class="navbar-brand text-white" href="#">Formulario de Registro</a>
-</nav>
-<div class="progress">
-	<div class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<div class="container mt-3">
+
+
+<div class="container mt-3 wrapper">
+	<nav class="text-center as">
+		<h1>Formulario de Registro</h1>
+	</nav>
   <div class="row">
-    <div class="col-8">
-      <form name="registro" onsubmit="return validarForm(event);">
+    <div class="col-12 inner">
+	  	<form name="registro" onsubmit="return validInput(event);">
+			<div class="form-group tab" name="datosPersonales"> <!--DATOS PERSONALES-->
+				<h2 >Datos Personales</h2>
+				<div class="row"><!--Nombre-->
+					<div class="form-group col-sm-6 col-lg-6"><!--NOMBRE-->
+						<label for="txtNombre">Nombre</label>
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="iconsColor fas fa-address-book text-primary"></i>
+							</span>
+							<input maxlength="8" type="text" onkeypress="return restriLetras(event)" class="form-control" id="txtNombre" placeholder="Ingrese su nombre" name="nombre" data-info="Completa la información de este campo para continuar">
+						</div>
+					</div>
+					<div class="form-group col-sm-6 col-lg-6"><!--APELLIDO-->
+						<label for="txtApellido">Apellido</label>
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="iconsColor fas fa-address-book text-primary"></i>
+							</span>
+							<input maxlength="8" type="text" onkeypress="return restriLetras(event)" class="form-control" id="txtApellido" placeholder="Ingreso su Apellido" data-info="Completa la información de este campo para continuar">
+						</div>
+					</div>
+				</div>
 
-      	<div class="row">
-    		<div class="col-6">
-			  <div class="form-group">
-			    <label for="txtNombre">Nombre</label>
-			    <div class="input-group mb-3">
-			    	<div class="input-group-prepend">
-				    	<span class="input-group-text" id="basic-addon1">
-				    		<i class="fas fa-address-book text-primary"></i>
-				    	</span>
-				  	</div>
-			    	<input type="text" class="form-control" id="txtNombre" placeholder="Ingrese su nombre" name="nombre" data-info="Completa la información de este campo para continuar">
-			    	<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
-			    </div>
-			  </div>
-			</div>
-			<div class="col-6">
-			  <div class="form-group">
-			    <label for="txtApellido">Apellido</label>
-			    <div class="input-group mb-3">
-			    	<div class="input-group-prepend">
-				    	<span class="input-group-text" id="basic-addon1">
-				    		<i class="fas fa-address-book text-primary"></i>
-				    	</span>
-				  	</div>
-			    	<input type="text" class="form-control" id="txtApellido" placeholder="Ingreso su Apellido" data-info="Completa la información de este campo para continuar">
-			    </div>
-			  </div>
-			</div>
-		</div>
+				<div class="form-group"><!--NACIONALIDAD-->
+					<label for="txtNacionalidad">Nacionalidad</label>
+					<div class="input-group mb-3">
+						<span class="input-group-text" id="basic-addon1">
+							<i class="iconsColor fas fa-globe-europe"></i>
+						</span>
+						<select class="form-control" id="txtNacionalidad" name="txtNacionalidad">
+							<option value="0">-</option>
+							<option value="1">Argentino/a</option>
+							<option value="2">Colombiano/a</option>
+							<option value="3">Venezolano/a</option>
+						</select>
+					</div>
+				</div>
 
-	  <div class="form-group">
-	    <label for="txtDni">DNI </label>
-	    <div class="input-group mb-3">
-	    	<div class="input-group-prepend">
-		    	<span class="input-group-text" id="basic-addon1">
-		    		<i class="fas fa-id-card text-primary"></i>
-		    	</span>
-		  	</div>
-	    	<input type="text" class="form-control" id="txtDni" placeholder="Ingreso su DNI" data-info="Completa la información de este campo para continuar">
-	    </div>
-	  </div>
-		  
-		  <div class="form-group">
-		    <label for="cmbProvincia">Provincia </label>
-		    <select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
-	    		<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
-				<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
-				<option value="buenos-aires">Buenos Aires</option>
-				<option value="santa-fe">Santa Fe</option>
-				<option value="la-pampa">La Pampa</option>
-				<option value="mendoza">Mendoza</option>
-		    </select>
-		  </div>
+				<div class="form-group"><!--GENERO-->
+					<label for="txtGenero">Genero</label>
+					<div class="input-group mb-3">
+						<span class="input-group-text" id="basic-addon1">
+							<i class="iconsColor fas fa-venus-mars"></i>
+						</span>
+						<select class="form-control" id="txtGenero" name="txtGenero">
+							<option value="0">No especifica</option>
+							<option value="1">Masculino</option>
+							<option value="2">Femenino</option>
+						</select>
+					</div>
+				</div>
 
-		  <div class="form-group" style="display:none;">
-		    <label for="cmbLocalidad">Localidad</label>
-		    <select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
-				<option value="retiro">Retiro</option>
-				<option value="nunez">Nuñez</option>
-				<option value="villa-del-parque">Villa del Parque</option>
-				<option value="monte-castro">Monte Castro</option>
-				<option value="caballito">Caballito</option>
-		    </select>
-		  </div>
+				<div class="row"><!--Documento-->
+					<div class="form-group col-sm-6"><!--TIPO DE DOCUMENTO-->
+						<label for="txtDocumento">Tipo de Documento</label>
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="iconsColor fas fa-id-card text-primary"></i>
+							</span>
+							<select class="form-control" id="txtDocumento" name="txtDocumento">
+								<option value="1">DNI</option>
+								<option value="2">Pasaporte</option>
+							</select>
+						</div>
+					</div>	
+					<div class="form-group col-sm-6"><!--NUMERO DE DOCUMENTO-->
+						<label for="txtNroDocumento">Numero de Documento</label>
+						<div class="input-group mb-3">
+							<input type="text" maxlength="8" minlength="6" class="form-control" id="txtNroDocumento" placeholder="Ingreso su numero de documento" data-info="Completa la información de este campo para continuar">
+						</div>
+					</div>
+				</div>
 
-		  <div class="form-group">
-		    <label for="txtEmail">E-Mail </label>
-		    <div class="input-group mb-3">
-		    	<div class="input-group-prepend">
-
-			    	<span class="input-group-text" id="basic-addon1">
-			    		<i class="fas fa-at text-primary"></i>
-			    	</span>
-			  	</div>
-		    	<input type="email" class="form-control" id="txtEmail" placeholder="Ingreso su Correo Electronico">
-		    </div>
-		  </div>
-
-			<div class="form-group">
-			    <label for="txtEmail">Teléfono</label>
-			    <div class="input-group mb-3">
-			    	<div class="input-group-prepend">
-				    	<span class="input-group-text" id="basic-addon1">
-				    		<i class="fas fa-phone text-primary"></i>
-				    	</span>
-				  	</div>
-			    	<input type="text" class="form-control" id="txtphone" placeholder="Número de teléfono">
-			    </div>
-			  </div>
-
-			<div class="form-check">
-			  <input class="form-check-input" type="checkbox" value="" id="chkTerms">
-			  <label class="form-check-label" for="chkTerms">
-			    Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
-			  </label>
+				<div class="form-group"><!--NUMERO DE TRAMITE-->
+					<label for="txtNroTramite">Numero de Tramite</label>
+					<div class="input-group mb-3">
+						<span class="input-group-text" id="basic-addon1">
+							<i class="iconsColor fas fa-id-card text-primary"></i>
+						</span>
+						<input type="text" class="form-control" id="txtNroTramite" placeholder="Ingreso su numero de tramite" data-info="Completa la información de este campo para continuar">
+					</div>
+				</div>	
+				
+				<div class="form-group"><!--FECHA DE NACIMIENTO-->
+					<label for="txtFechaNacimiento">Fecha de Nacimiento</label>
+					<div class="input-group mb-3">
+						<span class="input-group-text" id="basic-addon1">
+							<i class="iconsColor fas fa-birthday-cake"></i>
+						</span>
+						<input type="date" class="form-control" id="txtFechaNacimiento" data-info="Completa la información de este campo para continuar">
+					</div>
+				</div>
 			</div>
 
-		  <button type="submit" class="btn btn-primary mt-3">Enviar Registro</button>
+			<div class="form-group tab" name="datosDomicilio">  <!-- DATOS DE DOMICILIO  -->
+				<h2 >Domicilio</h2>
+				<div class="row"><!--DIRECCION-->
+					<div id="contenedorProvinciaD" class="form-group col-sm-12 col-lg-12">  <!--Provincia Domicilio -->
+						<label for="cmbProvincia">Provincia </label>
+						<select class="form-control" id="cmbProvincia" onchange="checkPronvincia(this.id)">
+							<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+							<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+							<option value="buenos-aires">Buenos Aires</option>
+							<option value="santa-fe">Santa Fe</option>
+							<option value="la-pampa">La Pampa</option>
+							<option value="mendoza">Mendoza</option>
+						</select>
+					</div>
+			
+					<div id="divLocalidad" class="form-group col-sm-6 col-lg-6" style="display:none;">  <!--Loocalidad Domicilio-->
+						<label for="cmbLocalidad">Localidad</label>
+						<select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
+							<option value="retiro">Retiro</option>
+							<option value="nunez">Nuñez</option>
+							<option value="villa-del-parque">Villa del Parque</option>
+							<option value="monte-castro">Monte Castro</option>
+							<option value="caballito">Caballito</option>
+						</select>
+					</div>			
+				</div>
+			
+				<div class="row"><!--Direccion-->
+					<div class="form-group col-sm-6 col-lg-6">  <!--calle domicilio-->
+						<label for="txtCalleD">Calle</label>
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="iconsColor fas fa-home"></i>
+							</span>
+							<input type="text" class="form-control" id="txtCalleD" placeholder="Ingrese calle de domicilio" name="calle" data-info="Completa la información de este campo para continuar">					</div>
+					</div>
+					<div class="form-group col-sm-3 col-lg-3"> <!--Altura domicilio   -->
+						<label for="txtAlturaD">Altura</label>
+						<div class="input-group mb-3">
+							<input type="number" class="form-control" id="txtAlturaD" placeholder="Altura del domicilio" name="altura" data-info="Completa la información de este campo para continuar">
+							<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+						</div>
+					</div>
+					<div class="form-group col-sm-3 col-lg-3">  <!-- Piso dpto Domicilio-->
+						<label for="txtPiso">Piso/Dto</label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="txtPiso" placeholder="Ingrese el piso" name="altura" data-info="Completa la información de este campo para continuar">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group tab" name="datosContacto">  <!-- DATOS DE CONTACTO  -->
+				<h2 >Contacto</h2>
+				<div class="row">
+						<div class="form-group col-sm-12 col-lg-12">  <!-- celular Contacto  -->
+							<label for="txtCelular">Celular</label>
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="iconsColor fas fa-mobile-alt"></i>
+								</span>
+								<input type="text" class="form-control" id="txtCelular" placeholder="Ingrese su telefono celular" name="celular" data-info="Completa la información de este campo para continuar">
+							</div>
+						</div>
+						<div class="form-group col-sm-12 col-lg-12">  <!--  Email Contacto-->
+							<label for="txtEmail">Correo electronico</label>
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="iconsColor far fa-envelope"></i>
+								</span>
+								<input type="email" name="email" class="form-control" id="txtEmail" placeholder="Ingrese su email de contacto" name="email" data-info="Completa la información de este campo para continuar" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+								
+							</div>
+						</div>
+						<div class="form-group col-sm-12 col-lg-12">  <!--  Cuenta Github -->
+							<label for="txtGithub">Cuenta de Github</label>
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="basic-addon1">
+									<i class="iconsColor fab fa-github"></i>
+								</span>
+								<input type="url" class="form-control" id="txtGithub" placeholder="Ingrese su cuenta de github" name="altura" data-info="Completa la información de este campo para continuar">
+								<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+							</div>
+						</div>
+				</div>
+			</div>
+
+			<div class="form-group tab" name="datosLaborales">  <!-- DATOS LABORALES  -->
+				<h2 >Datos Labotales</h2>
+				<div class="form-group"><!-- LUGAR DE TRABAJO -->
+					<label for="txtLugarTrabajo">Lugar de Trabajo</label>  <!-- LUGAR DE TRABAJO -->
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" id="txtLugarTrabajo" placeholder="Ingrese el nombre de su empresa" name="lugarTrabajo" data-info="Completa la información de este campo para continuar">
+						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					</div>
+				</div>
+				<div class="row"><!--DIRECCION-->
+					<div class="form-group col-sm-6 col-lg-6">  <!-- Calle trabajo  -->
+						<label for="txtCalleL">Calle</label>
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="iconsColor fas fa-home"></i>
+							</span>
+							<input type="text" class="form-control" id="txtCalleL" placeholder="Ingrese su calle" name="calle" data-info="Completa la información de este campo para continuar">
+						</div>
+					</div>
+					<div class="form-group col-sm-6 col-lg-3">
+						<label for="txtAlturaL">Altura</label> <!-- Altura de calle trabajo -->
+						<div class="input-group mb-3">
+							<input type="number" class="form-control" id="txtAlturaL" placeholder="Altura del domicilio" name="altura" data-info="Completa la información de este campo para continuar">
+							<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+						</div>
+					</div>
+					<div class="form-group col-sm-6 col-lg-3">
+						<label for="txtPisoL">Piso/Dpto</label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="txtPisoL" placeholder="Piso/Dpto de oficina" name="piso/dptoL" data-info="Completa la información de este campo para continuar">
+							<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+						</div>
+					</div>
+				</div>
+				
+				<div class="row"><!--PROVINCIA/LOCALIDAD-->
+					<div id="contenedorProvinciaL" class="form-group col-sm-12 col-lg-12"><!--PROVINCIA-->
+						<label for="cmbProvinciaL">Provincia </label>
+						<select class="form-control" id="cmbProvinciaL" onchange="checkPronvincia(this.id)">
+							<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
+							<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
+							<option value="buenos-aires">Buenos Aires</option>
+							<option value="santa-fe">Santa Fe</option>
+							<option value="la-pampa">La Pampa</option>
+							<option value="mendoza">Mendoza</option>
+						</select>
+					</div>
+
+					<div id="divLocalidadL" class="form-group col-sm-6 col-lg-6" style="display:none;"><!--LOCALIDAD-->
+						<label for="cmbLocalidadL">Localidad</label>
+						<select class="form-control" id="cmbLocalidadL" name="cmbLocalidadL">
+							<option value="retiro">Retiro</option>
+							<option value="nunez">Nuñez</option>
+							<option value="villa-del-parque">Villa del Parque</option>
+							<option value="monte-castro">Monte Castro</option>
+							<option value="caballito">Caballito</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group"><!--TELEFONO-->
+					<div class="form-group">
+						<label for="txtTelefonoL">Telefono</label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="txtTelefonoL" placeholder="Ingrese su telefono" name="telefonoL" data-info="Completa la información de este campo para continuar">
+							<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+						</div>
+					</div>
+				</div>
+				
+
+				
+				<div name="divProfesionalSalud"><!--PROFESIONAL SALUD-->
+					<div id="contenerProfesionalSalud" >
+						<label for="profeSalud">¿Es Profesional de Salud?</label>
+						<input class="form-check-input" type="checkbox" id="chkPSalud"  onchange="checkProfesionalSalud()" style=" width: 120px;">
+					</div>
+					<!--falta validar el checkPSalud, cuando no este seleccionado no debe requerir llenar los campos matricula y autoridad -->
+					<div class="row">
+						<div id="divMatricula" class="form-group col-sm-6 col-lg-6" style="display:none;"><!--MATRICULA-->
+							<label for="cmbMatricula">Matricula</label>
+							<input type="text" id="matricula" name= "matricula" class="form-control" >
+						</div>
+					<!--falta validar el checkPSalud, cuando no este seleccionado no debe requerir llenar los campos matricula y autoridad -->
+						<div id="divAutoridad" class="form-group col-sm-6 col-lg-6" style="display:none;"><!--AUTORIDAD EMISORA-->
+							<label for="cmbMatricula">Autoridad Emisora</label>
+							<input type="text" id="autoridad" name= "autoridad" class="form-control">
+						</div>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+			<div class="form-group tab" name="motivoSolicitud"><!--MOTIVO SOLICITUD-->
+				<h2 >Motivo de solicitud</h2>
+				<div class="form-group">
+					<label for="txtMotivo">Motivo</label>
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" id="txtMotivo" placeholder="Ingrese el motivo de la solicitud" name="motivo" data-info="Completa la información de este campo para continuar">
+						<!--i class="fas fa-question-circle" data-toggle="tooltip" title="Tooltip on bottom"></i-->
+					</div>
+					
+				</div>
+				
+				<div class="form-group" class="row">
+					<div class="form-check" class="form-group col-sm-6 col-lg-6">
+						
+						<label class="form-check-label" for="chkTerms" >
+						Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
+						</label>
+					</div>
+					
+					<div class="form-group col-sm-6 col-lg-6">
+							<input class="form-check-input" type="checkbox" value="" id="chkTerms">
+						</div>
+				</div>
+			</div> 
+		
+			<div> <!--BUTTONS NEXT/PREV-->
+				<div class="text-center row">
+					<div class="col-6">
+						<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+					</div>
+					<div class="col-6">
+						<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+					</div>
+					<div> <!-- Circles which indicates the steps of the form: -->
+						<div style="text-align:center;margin-top:40px;"><!--STEPS-->
+							<span class="step"></span>
+							<span class="step"></span>
+							<span class="step"></span>
+							<span class="step"></span>
+							<span class="step"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<button type="submit" class="btn btn-primary mt-3" hidden>Enviar Registro</button>
 		</form>
     </div>
-    <div class="col bg-dark text-light">
+    <div class="col bg-dark text-light" hidden>
     	<div class="text-warning">
     		<p id="helpInfo">Informaci&oacute;n adicional</p>
     	</div>
@@ -161,5 +384,7 @@
 <script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery.mask.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/validation.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/application.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="js/IconsFontAwesome.js"></script>
 </html>
