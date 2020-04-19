@@ -22,8 +22,50 @@
     <div class="col-8">
       <form name="registro" onsubmit="return validarForm(event);">
 
+		<div id="accordion">
+			<div class="card">
+			  <div class="card-header" id="headingOne">
+				<h5 class="mb-0">
+				  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+					Datos Personales
+				  </button>
+				</h5>
+			  </div>
+
+			  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+				<div class="card-body">
       	<div class="row">
     		<div class="col-6">
+				<div class="form-group">
+					<label for="cmbNacionalidad">Nacionalidad </label>
+					<select class="form-control" id="cmbNacionalidad">
+						<option value="" data-ort="no hay nada">Seleccionar Nacionalidad</option>
+						<option value="santa-fe">Argentino</option>
+						<option value="la-pampa">No Argentino</option>
+					</select>
+				  </div>
+
+				  <div class="form-group">
+					<label for="cbmGenero">Genero</label>
+					<select class="form-control" id="cbmGenero">
+						<option value="" data-ort="no hay nada">Seleccionar Género</option>
+						<option value="hombre">Hombre</option>
+						<option value="mujer">Mujer</option>
+					</select>
+				  </div>
+
+				  <div class="form-group">
+					<label for="txtFecha">Fecha de Nacimiento</label>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="fas fa-birthday-cake text-primary"></i>
+							</span>
+						  </div>
+						<input type="text" class="form-control" id="txtFecha" placeholder="Ingrese su fecha de nacimiento" data-info="Completa la información de este campo para continuar">
+					</div>
+				  </div>
+
 			  <div class="form-group">
 			    <label for="txtNombre">Nombre</label>
 			    <div class="input-group mb-3">
@@ -38,6 +80,40 @@
 			  </div>
 			</div>
 			<div class="col-6">
+
+				<div class="form-group">
+					<label for="cmbTipoDoc">Tipo de Documento</label>
+					<select class="form-control" id="cmbTipoDoc">
+						<option value="dni">DNI Argetino</option>
+						<option value="pasaporte">Pasaporte</option>
+						<option value="extranjero">Documento Extranjero</option>
+					</select>
+				  </div>
+
+				  <div class="form-group">
+					<label for="txtDni">Número </label>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="fas fa-id-card text-primary"></i>
+							</span>
+						  </div>
+						<input type="text" class="form-control" id="txtDni" placeholder="Ingrese número" data-info="Completa la información de este campo para continuar">
+					</div>
+				  </div>
+
+				  <div class="form-group">
+					<label for="numTramite">Numero de tramite </label>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="fas fa-id-card text-primary"></i>
+							</span>
+						  </div>
+						<input type="text" class="form-control" id="numTramite" placeholder="xxxxxxxx" data-info="Completa la información de este campo para continuar">
+					</div>
+				  </div>
+				  
 			  <div class="form-group">
 			    <label for="txtApellido">Apellido</label>
 			    <div class="input-group mb-3">
@@ -52,74 +128,17 @@
 			</div>
 		</div>
 
-	  <div class="form-group">
-	    <label for="txtDni">DNI </label>
-	    <div class="input-group mb-3">
-	    	<div class="input-group-prepend">
-		    	<span class="input-group-text" id="basic-addon1">
-		    		<i class="fas fa-id-card text-primary"></i>
-		    	</span>
-		  	</div>
-	    	<input type="text" class="form-control" id="txtDni" placeholder="Ingreso su DNI" data-info="Completa la información de este campo para continuar">
-	    </div>
-	  </div>
-		  
-		  <div class="form-group">
-		    <label for="cmbProvincia">Provincia </label>
-		    <select class="form-control" id="cmbProvincia" onchange="checkPronvincia(event, this)">
-	    		<option value="" data-ort="no hay nada">Seleccionar Provincia</option>
-				<option value="ciudad" data-ort="data adiconal">Ciudad de Buenos Aires</option>
-				<option value="buenos-aires">Buenos Aires</option>
-				<option value="santa-fe">Santa Fe</option>
-				<option value="la-pampa">La Pampa</option>
-				<option value="mendoza">Mendoza</option>
-		    </select>
+		<div class="form-check">
+			<input class="form-check-input" type="checkbox" value="" id="chkTerms">
+			<label class="form-check-label" for="chkTerms">
+			  Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
+			</label>
 		  </div>
-
-		  <div class="form-group" style="display:none;">
-		    <label for="cmbLocalidad">Localidad</label>
-		    <select class="form-control" id="cmbLocalidad" name="cmbLocalidad">
-				<option value="retiro">Retiro</option>
-				<option value="nunez">Nuñez</option>
-				<option value="villa-del-parque">Villa del Parque</option>
-				<option value="monte-castro">Monte Castro</option>
-				<option value="caballito">Caballito</option>
-		    </select>
-		  </div>
-
-		  <div class="form-group">
-		    <label for="txtEmail">E-Mail </label>
-		    <div class="input-group mb-3">
-		    	<div class="input-group-prepend">
-
-			    	<span class="input-group-text" id="basic-addon1">
-			    		<i class="fas fa-at text-primary"></i>
-			    	</span>
-			  	</div>
-		    	<input type="email" class="form-control" id="txtEmail" placeholder="Ingreso su Correo Electronico">
-		    </div>
-		  </div>
-
-			<div class="form-group">
-			    <label for="txtEmail">Teléfono</label>
-			    <div class="input-group mb-3">
-			    	<div class="input-group-prepend">
-				    	<span class="input-group-text" id="basic-addon1">
-				    		<i class="fas fa-phone text-primary"></i>
-				    	</span>
-				  	</div>
-			    	<input type="text" class="form-control" id="txtphone" placeholder="Número de teléfono">
-			    </div>
-			  </div>
-
-			<div class="form-check">
-			  <input class="form-check-input" type="checkbox" value="" id="chkTerms">
-			  <label class="form-check-label" for="chkTerms">
-			    Aceptar <a href="javascript:void();" data-toggle="modal" data-target="#exampleModal">Terminos y Condiciones</a>
-			  </label>
-			</div>
-
-		  <button type="submit" class="btn btn-primary mt-3">Enviar Registro</button>
+		<button type="submit" class="btn btn-primary mt-3">Enviar Registro</button>
+	</div>
+</div>
+</div>
+</div>		
 		</form>
     </div>
     <div class="col bg-dark text-light">
@@ -128,7 +147,6 @@
     	</div>
     </div>
   </div>
-  <div class="mt-3"></div>
   <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
